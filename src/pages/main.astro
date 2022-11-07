@@ -25,7 +25,6 @@
     background: var(--gray-lighter);
     margin-top: 50px;
     margin-bottom: 50px;
-    border-radius: 5px;
     overflow: hidden;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -41,7 +40,6 @@
     grid-row-start: 3;
     grid-row-end: 5;
     display: flex;
-    padding: 3em 3.5em;
     transition: padding 0.3s linear;
     align-items: stretch;
     justify-content: space-between;
@@ -66,11 +64,9 @@
   .title-1,
   .title-3 {
     font-weight: 800;
-    font-size: 3em;
   }
   .title-2 {
     font-weight: 600;
-    font-size: 1.1em;
   }
   .title-3 {
     order: 1;
@@ -96,11 +92,11 @@
   .style-4 {
     background-image: linear-gradient(
       var(--gray-lighter),
-      var(--gray-lighter) 7px,
-      var(--gray-darker) 7px,
+      var(--gray-lighter) 60%,
+      var(--gray-darker) 60%,
       var(--gray-darker)
     );
-    background-size: 100% 14px;
+    background-size: 100% 5%;
   }
   .style-5 {
     background-image: linear-gradient(
@@ -117,11 +113,11 @@
       ),
       linear-gradient(
         var(--gray-lighter),
-        var(--gray-lighter) 7px,
-        var(--gray-darker) 7px,
+        var(--gray-lighter) 60%,
+        var(--gray-darker) 60%,
         var(--gray-darker)
       );
-    background-size: 100%, 100% 14px;
+    background-size: 100%, 100% 5%;
   }
   .style-7 {
     background: linear-gradient(45deg, var(--gray-light) 50%, transparent 50%),
@@ -165,21 +161,21 @@
     background-image: linear-gradient(
       to right,
       var(--pink),
-      var(--pink) 7px,
-      var(--gray-lighter) 7px,
+      var(--pink) 44%,
+      var(--gray-lighter) 44%,
       var(--gray-lighter)
     );
-    background-size: 14px 100%;
+    background-size: 5% 100%;
   }
 </style>
 
 <!-- 
 This pen uses flex and grid for alignment and layout (respectively), and background gradients for the different tiles (with a couple of exceptions: style-1, style-2 and style-10).
 -->
-<div class="wrap">
-  <div class="block-title">
+<div class="wrap rounded-3xl">
+  <div class="block-title p-24">
     <!-- feels a little hacky wrapping every character, but makes alignment super easy without the need for JS or hacks -->
-    <div class="title-1">
+    <div class="title-1 text-6xl">
       <span>M</span>
       <span>O</span>
       <span>R</span>
@@ -187,7 +183,7 @@ This pen uses flex and grid for alignment and layout (respectively), and backgro
       <span>O</span>
       <span>R</span>
     </div>
-    <div class="title-3">
+    <div class="title-3 text-6xl">
       <span>D</span>
       <span>E</span>
       <span>V</span>
@@ -198,7 +194,7 @@ This pen uses flex and grid for alignment and layout (respectively), and backgro
       <span>E</span>
       <span>R</span>
     </div>
-    <div class="title-2">
+    <div class="title-2 text-3xl">
       <span>F</span>
       <span>R</span>
       <span>O</span>
