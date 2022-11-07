@@ -23,7 +23,7 @@
   }
   .wrap {
     background: var(--gray-lighter);
-    margin-top: 50px;
+    margin-top: 100px;
     margin-bottom: 50px;
     overflow: hidden;
     display: grid;
@@ -49,9 +49,6 @@
     display: flex;
     justify-content: space-between;
   }
-  .block-title:hover {
-    padding: 3em;
-  }
   .block-title:hover .title-1 {
     order: 0;
   }
@@ -60,13 +57,6 @@
   }
   .block-title:hover .title-3 {
     order: 1;
-  }
-  .title-1,
-  .title-3 {
-    font-weight: 800;
-  }
-  .title-2 {
-    font-weight: 600;
   }
   .title-3 {
     order: 1;
@@ -172,59 +162,61 @@
 <!-- 
 This pen uses flex and grid for alignment and layout (respectively), and background gradients for the different tiles (with a couple of exceptions: style-1, style-2 and style-10).
 -->
-<div class="wrap rounded-3xl">
-  <div class="block-title p-24">
-    <!-- feels a little hacky wrapping every character, but makes alignment super easy without the need for JS or hacks -->
-    <div class="title-1 text-6xl">
-      <span>M</span>
-      <span>O</span>
-      <span>R</span>
-      <span>M</span>
-      <span>O</span>
-      <span>R</span>
+<div class="lg:container">
+  <div class="wrap rounded-lg lg:rounded-2xl">
+    <div class="block-title p-20 hover:p-24">
+      <!-- feels a little hacky wrapping every character, but makes alignment super easy without the need for JS or hacks -->
+      <div class="title-1 text-6xl font-extrabold">
+        <span>M</span>
+        <span>O</span>
+        <span>R</span>
+        <span>M</span>
+        <span>O</span>
+        <span>R</span>
+      </div>
+      <div class="title-3 text-6xl font-extrabold">
+        <span>D</span>
+        <span>E</span>
+        <span>V</span>
+        <span>E</span>
+        <span>L</span>
+        <span>O</span>
+        <span>P</span>
+        <span>E</span>
+        <span>R</span>
+      </div>
+      <div class="title-2 text-2xl font-semibold">
+        <span>F</span>
+        <span>R</span>
+        <span>O</span>
+        <span>N</span>
+        <span>T</span>
+        <span>E</span>
+        <span>N</span>
+        <span>D</span>
+        <span>&nbsp;</span>
+        <span>W</span>
+        <span>E</span>
+        <span>B</span>
+      </div>
     </div>
-    <div class="title-3 text-6xl">
-      <span>D</span>
-      <span>E</span>
-      <span>V</span>
-      <span>E</span>
-      <span>L</span>
-      <span>O</span>
-      <span>P</span>
-      <span>E</span>
-      <span>R</span>
-    </div>
-    <div class="title-2 text-3xl">
-      <span>F</span>
-      <span>R</span>
-      <span>O</span>
-      <span>N</span>
-      <span>T</span>
-      <span>E</span>
-      <span>N</span>
-      <span>D</span>
-      <span>&nbsp;</span>
-      <span>W</span>
-      <span>E</span>
-      <span>B</span>
-    </div>
+    <div class="block style-1"></div>
+    <div class="block style-2"></div>
+    <div class="block style-3"></div>
+    <div class="block style-4"></div>
+    <div class="block style-5"></div>
+    <div class="block style-6"></div>
+    <div class="block style-7"></div>
+    <div class="block style-8"></div>
+    <div class="block style-9"></div>
+    <div class="block style-10"></div>
+    <div class="block style-6"></div>
+    <div class="block style-3"></div>
+    <div class="block style-12"></div>
+    <div class="block style-1"></div>
+    <div class="block style-11"></div>
+    <div class="block style-7"></div>
+    <div class="block style-2"></div>
+    <div class="block-13"></div>
   </div>
-  <div class="block style-1"></div>
-  <div class="block style-2"></div>
-  <div class="block style-3"></div>
-  <div class="block style-4"></div>
-  <div class="block style-5"></div>
-  <div class="block style-6"></div>
-  <div class="block style-7"></div>
-  <div class="block style-8"></div>
-  <div class="block style-9"></div>
-  <div class="block style-10"></div>
-  <div class="block style-6"></div>
-  <div class="block style-3"></div>
-  <div class="block style-12"></div>
-  <div class="block style-1"></div>
-  <div class="block style-11"></div>
-  <div class="block style-7"></div>
-  <div class="block style-2"></div>
-  <div class="block-13"></div>
 </div>
