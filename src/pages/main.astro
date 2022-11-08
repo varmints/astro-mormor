@@ -1,4 +1,5 @@
 ---
+import Footer from "../components/Footer.astro";
 ---
 
 <style is:global>
@@ -30,15 +31,14 @@
     grid-template-columns: repeat(4, 1fr);
   }
   .block {
-    width: 25vw;
-    height: 25vw;
+    @apply w-[25vw] h-[25vw] sm:w-[calc(640px/4)] sm:h-[calc(640px/4)] md:w-[calc(768px/4)] md:h-[calc(768px/4)] lg:w-[calc(1024px/4)] lg:h-[calc(1024px/4)] xl:w-[calc(1280px/4)] xl:h-[calc(1280px/4)] 2xl:w-[calc(1536px/4)] 2xl:h-[calc(1536px/4)];
   }
   .block-title {
     background: var(--gray-lighter);
     grid-column-start: 2;
     grid-column-end: -1;
-    grid-row-start: 3;
-    grid-row-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 4;
     display: flex;
     transition: padding 0.3s linear;
     align-items: stretch;
@@ -49,15 +49,6 @@
     display: flex;
     justify-content: space-between;
   }
-  .block-title:hover .title-1 {
-    order: 0;
-  }
-  .block-title:hover .title-2 {
-    order: 2;
-  }
-  .block-title:hover .title-3 {
-    order: 1;
-  }
   .title-3 {
     order: 1;
   }
@@ -65,9 +56,8 @@
     background: var(--gray-darker);
   }
   .style-2 {
-    width: 0;
-    height: 0;
-    border: 12.5vw solid var(--gray-lighter);
+    @apply w-0 h-0 border-solid border-[12.5vw] sm:border-[calc(640px/8)] md:border-[calc(768px/8)] lg:border-[calc(1024px/8)] lg:pt-0 xl:border-[calc(1280px/8)] 2xl:border-[calc(1536px/8)];
+    border-color: var(--gray-lighter);
     border-top-color: var(--gray-dark);
     border-bottom-color: var(--gray-dark);
     background: var(--gray-dark);
@@ -162,9 +152,9 @@
 <!-- 
 This pen uses flex and grid for alignment and layout (respectively), and background gradients for the different tiles (with a couple of exceptions: style-1, style-2 and style-10).
 -->
-<div class="lg:container">
-  <div class="wrap rounded-lg lg:rounded-2xl">
-    <div class="block-title p-20 hover:p-24">
+<div class="container">
+  <div class="wrap rounded-3xl">
+    <div class="block-title p-20 hover:p-24 xl:p-36 xl:hover:p-40">
       <!-- feels a little hacky wrapping every character, but makes alignment super easy without the need for JS or hacks -->
       <div class="title-1 text-6xl font-extrabold">
         <span>M</span>
@@ -219,4 +209,5 @@ This pen uses flex and grid for alignment and layout (respectively), and backgro
     <div class="block style-2"></div>
     <div class="block-13"></div>
   </div>
+  <Footer />
 </div>
