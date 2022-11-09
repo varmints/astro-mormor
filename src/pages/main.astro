@@ -1,9 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Footer from "../components/Footer.astro";
+import { Icon } from "astro-icon";
 ---
 
 <style is:global>
+  [astro-icon] {
+    @apply text-2xl;
+  }
   :root {
     --gray-lighter: #f7f7f7;
     --gray-light: #dbdbdd;
@@ -12,21 +15,12 @@ import Footer from "../components/Footer.astro";
     --pink: #e89d93;
     --yellow: #eec71a;
   }
-
-  * {
-    box-sizing: border-box;
-  }
   body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background: powderblue;
     color: var(--gray-darker);
   }
   .wrap {
     background: var(--gray-lighter);
-    margin-top: 100px;
-    margin-bottom: 50px;
     overflow: hidden;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -154,11 +148,17 @@ import Footer from "../components/Footer.astro";
   <!-- 
 This pen uses flex and grid for alignment and layout (respectively), and background gradients for the different tiles (with a couple of exceptions: style-1, style-2 and style-10).
 -->
-  <div class="container">
-    <div class="wrap rounded-2xl lg:rounded-3xl">
-      <div class="block-title p-10 hover:p-12 xl:p-36 xl:hover:p-40">
+  <div class="container mx-auto">
+    <div class="flex justify-end gap-4 m-4">
+      <a href="/"><Icon name="ph:linkedin-logo-duotone" width="40" /></a>
+      <a href="/"><Icon name="ph:instagram-logo-duotone" width="40" /></a>
+    </div>
+  </div>
+  <div class="container mx-auto">
+    <div class="wrap rounded-2xl lg:rounded-3xl mb-12">
+      <div class="block-title p-8 sm:p-12 md:p-14 lg:p-20 xl:p-28 2xl:p-36">
         <!-- feels a little hacky wrapping every character, but makes alignment super easy without the need for JS or hacks -->
-        <div class="title-1 text-xl lg:text-6xl font-extrabold">
+        <div class="title-1 text-3xl lg:text-6xl font-extrabold">
           <span>M</span>
           <span>O</span>
           <span>R</span>
@@ -166,7 +166,7 @@ This pen uses flex and grid for alignment and layout (respectively), and backgro
           <span>O</span>
           <span>R</span>
         </div>
-        <div class="title-3 text-xl lg:text-6xl font-extrabold">
+        <div class="title-3 text-3xl lg:text-6xl font-extrabold">
           <span>D</span>
           <span>E</span>
           <span>V</span>
@@ -211,6 +211,5 @@ This pen uses flex and grid for alignment and layout (respectively), and backgro
       <div class="block style-2"></div>
       <div class="block-13"></div>
     </div>
-    <Footer />
   </div>
 </Layout>
