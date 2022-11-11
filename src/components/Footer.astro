@@ -4,15 +4,22 @@ import ThemeIcon from "./ThemeIcon.astro";
 const currentYear = new Date().getFullYear();
 ---
 
-<style></style>
+<style>
+  .copy-left {
+    display: inline-block;
+    text-align: right;
+    margin: 0px;
+    transform: scaleX(-1);
+    filter: FlipH;
+  }
+</style>
 
 <div class="container mt-auto mx-auto py-6">
-  <div class="flex justify-center items-center mb-4">
-    <div class="flex flex-1">
-      <span class="ml-auto mr-2">Dzień</span>
-    </div>
+  <div class="flex justify-center mb-4">
     <ThemeIcon />
-    <div class="flex flex-1"><span class="mr-auto ml-2">Noc</span></div>
   </div>
-  <div class="text-center">&copy; {currentYear} MorMor</div>
+  <div class="text-center">
+    <span class="copy-left">&copy;</span>
+    {currentYear} MorMor. All rights reserved XD
+  </div>
 </div>

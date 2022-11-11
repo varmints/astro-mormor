@@ -1,5 +1,7 @@
 ---
 import Footer from "../components/Footer.astro";
+import { Icon } from "astro-icon";
+import "../styles/global.css";
 export interface Props {
   title: string;
 }
@@ -18,20 +20,14 @@ const { title } = Astro.props;
   </head>
   <body class="h-full flex flex-col">
     <header>
-      <nav class="container mx-auto py-4"></nav>
+      <nav class="container mx-auto">
+        <div class="flex justify-end gap-4 m-4">
+          <a href="/"><Icon name="ph:linkedin-logo-duotone" width="40" /></a>
+          <a href="/"><Icon name="ph:instagram-logo-duotone" width="40" /></a>
+        </div>
+      </nav>
     </header>
     <slot />
     <Footer />
-    <style is:global>
-      :root {
-        --accent: 124, 58, 237;
-        --accent-gradient: linear-gradient(
-          45deg,
-          rgb(var(--accent)),
-          #da62c4 30%,
-          white 60%
-        );
-      }
-    </style>
   </body>
 </html>
