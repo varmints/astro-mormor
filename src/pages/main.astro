@@ -7,27 +7,25 @@ import Layout from "../layouts/Layout.astro";
     @apply text-2xl;
   }
   :root {
-    --gray-lighter: #f7f7f7;
-    --gray-light: #dbdbdd;
-    --gray-dark: #aeafb3;
-    --gray-darker: #454547;
-    --pink: #e89d93;
-    --yellow: #eec71a;
+    --gray-lighter: #daffef;
+    --gray-light: #ffe0b2;
+    --gray-dark: #004734;
+    --gray-darker: #004734;
+    --blue: #009f78;
+    --pink: #ffdcec;
+    --yellow: #007f5f;
   }
   body {
     background: #aee9ff;
-    color: var(--gray-darker);
   }
   .wrap {
-    @apply overflow-hidden grid grid-cols-[repeat(4,_1fr)] lg:grid-cols-[repeat(6,_1fr)];
-    background: var(--gray-lighter);
+    @apply grid grid-cols-[repeat(4,_1fr)] overflow-hidden lg:grid-cols-[repeat(6,_1fr)];
   }
   .block {
-    @apply w-[25vw] h-[25vw] sm:w-[calc(640px/4)] sm:h-[calc(640px/4)] md:w-[calc(768px/4)] md:h-[calc(768px/4)] lg:w-[calc(1024px/6)] lg:h-[calc(1024px/6)] xl:w-[calc(1280px/6)] xl:h-[calc(1280px/6)] 2xl:w-[calc(1536px/6)] 2xl:h-[calc(1536px/6)];
+    @apply h-[25vw] w-[25vw] sm:h-[calc(640px/4)] sm:w-[calc(640px/4)] md:h-[calc(768px/4)] md:w-[calc(768px/4)] lg:h-[calc(1024px/6)] lg:w-[calc(1024px/6)] xl:h-[calc(1280px/6)] xl:w-[calc(1280px/6)] 2xl:h-[calc(1536px/6)] 2xl:w-[calc(1536px/6)];
   }
   .block-title {
-    background: var(--gray-lighter);
-    @apply col-start-2 col-end-[-1] row-start-2 lg:col-start-2 row-end-4 lg:col-end-[-2] lg:row-start-2 lg:row-end-5;
+    @apply col-start-2 col-end-[-1] row-start-2 row-end-4 bg-transparent lg:col-start-2 lg:col-end-[-2] lg:row-start-2 lg:row-end-5;
     display: flex;
     transition: padding 0.3s linear;
     align-items: stretch;
@@ -45,7 +43,7 @@ import Layout from "../layouts/Layout.astro";
     background: var(--gray-darker);
   }
   .style-2 {
-    @apply w-0 h-0 border-solid border-[12.5vw] sm:border-[calc(640px/8)] md:border-[calc(768px/8)] lg:border-[calc(1024px/12)] xl:border-[calc(1280px/12)] 2xl:border-[calc(1536px/12)];
+    @apply h-0 w-0 border-[12.5vw] border-solid sm:border-[calc(640px/8)] md:border-[calc(768px/8)] lg:border-[calc(1024px/12)] xl:border-[calc(1280px/12)] 2xl:border-[calc(1536px/12)];
     border-color: var(--gray-lighter);
     border-top-color: var(--gray-dark);
     border-bottom-color: var(--gray-dark);
@@ -54,7 +52,7 @@ import Layout from "../layouts/Layout.astro";
   .style-3 {
     background-image: linear-gradient(
       135deg,
-      var(--pink) 50%,
+      var(--blue) 50%,
       var(--gray-light) 50%
     );
   }
@@ -91,7 +89,8 @@ import Layout from "../layouts/Layout.astro";
   .style-7 {
     background: linear-gradient(45deg, var(--gray-light) 50%, transparent 50%),
       radial-gradient(var(--gray-darker) 4px, transparent 4px),
-      radial-gradient(var(--gray-darker) 4px, transparent 4px), transparent;
+      radial-gradient(var(--gray-darker) 4px, transparent 4px),
+      var(--gray-lighter);
     background-size: 100%, 24px 24px, 24px 24px, 100%;
     background-position: 0 0, -2px 6px, 10px 18px, 0 0;
   }
@@ -105,7 +104,7 @@ import Layout from "../layouts/Layout.astro";
   .style-9 {
     background-image: linear-gradient(
       225deg,
-      var(--pink) 50%,
+      var(--blue) 50%,
       var(--gray-lighter) 50%
     );
   }
@@ -115,7 +114,7 @@ import Layout from "../layouts/Layout.astro";
   .style-11 {
     background-image: linear-gradient(
       45deg,
-      var(--pink) 50%,
+      var(--blue) 50%,
       var(--gray-lighter) 50%
     );
   }
@@ -129,8 +128,8 @@ import Layout from "../layouts/Layout.astro";
   .block-13 {
     background-image: linear-gradient(
       to right,
-      var(--pink),
-      var(--pink) 44%,
+      var(--blue),
+      var(--blue) 44%,
       var(--gray-lighter) 44%,
       var(--gray-lighter)
     );
@@ -143,10 +142,14 @@ import Layout from "../layouts/Layout.astro";
 This pen uses flex and grid for alignment and layout (respectively), and background gradients for the different tiles (with a couple of exceptions: style-1, style-2 and style-10).
 -->
   <div class="container mx-auto">
-    <div class="wrap rounded-xl sm:rounded-3xl mb-12">
-      <div class="block-title p-8 sm:p-12 md:p-14 lg:p-20 xl:p-28 2xl:p-36">
+    <div class="wrap mb-12 rounded-xl sm:rounded-3xl">
+      <div
+        class="block-title 2xl-p-20 p-8 sm:p-12 md:p-16 lg:py-14 lg:px-16 xl:py-16 xl:px-20"
+      >
         <!-- feels a little hacky wrapping every character, but makes alignment super easy without the need for JS or hacks -->
-        <div class="title-1 text-3xl lg:text-6xl xl:text-8xl font-extrabold">
+        <div
+          class="title-1 text-3xl font-extrabold sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl"
+        >
           <span>M</span>
           <span>O</span>
           <span>R</span>
@@ -154,7 +157,9 @@ This pen uses flex and grid for alignment and layout (respectively), and backgro
           <span>O</span>
           <span>R</span>
         </div>
-        <div class="title-3 text-3xl lg:text-6xl xl:text-8xl font-extrabold">
+        <div
+          class="title-3 text-3xl font-extrabold sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl"
+        >
           <span>D</span>
           <span>E</span>
           <span>V</span>
@@ -165,7 +170,9 @@ This pen uses flex and grid for alignment and layout (respectively), and backgro
           <span>E</span>
           <span>R</span>
         </div>
-        <div class="title-2 text-xs lg:text-2xl xl:text-4xl font-semibold">
+        <div
+          class="title-2 text-sm font-semibold sm:text-lg md:text-lg lg:text-2xl xl:text-3xl 2xl:text-4xl"
+        >
           <span>F</span>
           <span>R</span>
           <span>O</span>
@@ -180,23 +187,23 @@ This pen uses flex and grid for alignment and layout (respectively), and backgro
           <span>B</span>
         </div>
       </div>
-      <div class="block style-1"></div>
-      <div class="block style-2"></div>
-      <div class="block style-3"></div>
-      <div class="block style-4"></div>
-      <div class="block style-5"></div>
-      <div class="block style-6"></div>
-      <div class="block style-7"></div>
-      <div class="block style-8"></div>
-      <div class="block style-9"></div>
-      <div class="block style-10"></div>
-      <div class="block style-6"></div>
-      <div class="block style-3"></div>
-      <div class="block style-12"></div>
-      <div class="block style-1"></div>
-      <div class="block style-11"></div>
-      <div class="block style-7"></div>
-      <div class="block style-2"></div>
+      <div class="style-1 block"></div>
+      <div class="style-2 block"></div>
+      <div class="style-3 block"></div>
+      <div class="style-4 hidden sm:block"></div>
+      <div class="style-5 block"></div>
+      <div class="style-6 block"></div>
+      <div class="style-7 hidden sm:block"></div>
+      <div class="style-8 hidden sm:block"></div>
+      <div class="style-9 block"></div>
+      <div class="style-10 block"></div>
+      <div class="style-6 block"></div>
+      <div class="style-3 block"></div>
+      <div class="style-12 block"></div>
+      <div class="style-1 block"></div>
+      <div class="style-11 block"></div>
+      <div class="style-7 hidden sm:block"></div>
+      <div class="style-2 block"></div>
       <div class="block-13"></div>
     </div>
   </div>
