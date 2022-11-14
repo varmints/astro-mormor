@@ -173,9 +173,28 @@
     #da62c4 30%,
     white 60%
   );
+  --height: 312px;
 }
 
 .dark body {
   @apply text-gray-100;
-  background-color: #00386d;
+  background-image: linear-gradient(315deg, #00386d 25%, transparent 25%),
+    linear-gradient(225deg, #00386d 25%, transparent 25%),
+    linear-gradient(135deg, #00386d 25%, transparent 25%),
+    linear-gradient(45deg, #00386d 25%, transparent 25%);
+  background-position-x: 0, 0, 0, 0;
+  background-position-y: 0, 0, calc(var(--height) / 2), calc(var(--height) / 2);
+  background-size: var(--height) var(--height);
+  background-color: #001a39;
+}
+
+body {
+  background-image: linear-gradient(315deg, #e3f7ff 25%, transparent 25%),
+    linear-gradient(225deg, #e3f7ff 25%, transparent 25%),
+    linear-gradient(135deg, #e3f7ff 25%, transparent 25%),
+    linear-gradient(45deg, #e3f7ff 25%, transparent 25%);
+  background-position-x: 0, 0, 0, 0;
+  background-position-y: 0, 0, calc(var(--height) / 2), calc(var(--height) / 2);
+  background-size: var(--height) var(--height);
+  background-color: #aee9ff;
 }

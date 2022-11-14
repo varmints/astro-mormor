@@ -15,17 +15,15 @@ import Layout from "../layouts/Layout.astro";
     --pink: #ffdcec;
     --yellow: #007f5f;
   }
-  body {
-    background: #aee9ff;
-  }
+
   .wrap {
-    @apply grid grid-cols-[repeat(4,_1fr)] overflow-hidden lg:grid-cols-[repeat(6,_1fr)];
+    @apply grid grid-cols-[repeat(4,_1fr)] overflow-hidden bg-gray-100/50 backdrop-blur-sm dark:bg-gray-600/50 lg:grid-cols-[repeat(6,_1fr)];
   }
   .background {
     @apply h-[25vw] w-[25vw] sm:h-[calc(640px/4)] sm:w-[calc(640px/4)] md:h-[calc(768px/4)] md:w-[calc(768px/4)] lg:h-[calc(1024px/6)] lg:w-[calc(1024px/6)] xl:h-[calc(1280px/6)] xl:w-[calc(1280px/6)] 2xl:h-[calc(1536px/6)] 2xl:w-[calc(1536px/6)];
   }
   .block-title {
-    @apply col-start-2 col-end-[-1] row-start-2 row-end-4 bg-transparent lg:col-start-2 lg:col-end-[-2] lg:row-start-2 lg:row-end-4;
+    @apply col-start-2 col-end-[-1] row-start-2 row-end-4 lg:col-start-2 lg:col-end-[-2] lg:row-start-2 lg:row-end-4;
     display: flex;
     transition: padding 0.3s linear;
     align-items: stretch;
@@ -104,7 +102,7 @@ import Layout from "../layouts/Layout.astro";
   .style-7 {
     background: linear-gradient(45deg, var(--gray-light) 50%, transparent 50%),
       linear-gradient(
-        to right,
+        to left,
         var(--blue),
         var(--blue) 44%,
         var(--gray-lighter) 44%,
@@ -212,15 +210,15 @@ This pen uses flex and grid for alignment and layout (respectively), and backgro
       <div class="style-4 background"></div>
       <div class="style-5 background"></div>
       <div class="style-6 background"></div>
-      <div class="style-7 background"></div>
+      <div class="style-7 background hidden sm:block"></div>
       <div class="style-8 background"></div>
       <div class="style-9 background"></div>
       <div class="style-10 background"></div>
       <div class="style-6 background"></div>
       <div class="style-3 background sm:hidden lg:block"></div>
       <div class="style-12 background"></div>
-      <div class="style-1 background sm:hidden"></div>
-      <div class="style-11 background sm:hidden"></div>
+      <div class="style-1 background hidden"></div>
+      <div class="style-11 background hidden"></div>
       <div class="style-7 background"></div>
       <div class="style-2 background"></div>
       <div class="block-13"></div>
