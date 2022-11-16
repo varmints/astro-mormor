@@ -1,11 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon";
 ---
 
 <style lang="css">
-  [astro-icon] {
-    @apply text-2xl;
-  }
   :root {
     --gray-lighter: #daffef;
     --gray-light: #004734;
@@ -17,15 +15,13 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .wrap {
-    @apply grid grid-cols-[repeat(4,_1fr)] overflow-hidden bg-gray-100/50 backdrop-blur-sm dark:bg-gray-600/50 lg:grid-cols-[repeat(6,_1fr)];
+    @apply grid grid-cols-[repeat(4,_1fr)] overflow-hidden backdrop-blur-sm lg:grid-cols-[repeat(6,_1fr)];
   }
   .background {
     @apply h-[25vw] w-[25vw] sm:h-[calc(640px/4)] sm:w-[calc(640px/4)] md:h-[calc(768px/4)] md:w-[calc(768px/4)] lg:h-[calc(1024px/6)] lg:w-[calc(1024px/6)] xl:h-[calc(1280px/6)] xl:w-[calc(1280px/6)] 2xl:h-[calc(1536px/6)] 2xl:w-[calc(1536px/6)];
   }
   .block-title {
-    @apply col-start-2 col-end-[-1] row-start-2 row-end-4 lg:col-start-2 lg:col-end-[-2] lg:row-start-2 lg:row-end-4;
-    display: flex;
-    transition: padding 0.3s linear;
+    @apply col-start-2 col-end-[-1] row-start-2 row-end-4 flex lg:col-start-2 lg:col-end-[-2] lg:row-start-2 lg:row-end-4;
     align-items: stretch;
     justify-content: space-between;
     flex-direction: column;
@@ -161,7 +157,7 @@ This pen uses flex and grid for alignment and layout (respectively), and backgro
   <div class="container mx-auto">
     <div class="wrap mb-12 rounded-xl sm:rounded-3xl">
       <div
-        class="block-title 2xl-p-20 p-8 text-aquamarine-500 dark:text-aquamarine-100 sm:p-12 md:p-16 lg:py-14 lg:px-16 xl:py-16 xl:px-20"
+        class="block-title 2xl-p-20 p-8 text-aquamarine-500 dark:text-aquamarine-300 sm:p-12 md:p-16 lg:py-14 lg:px-16 xl:py-16 xl:px-20"
       >
         <!-- feels a little hacky wrapping every character, but makes alignment super easy without the need for JS or hacks -->
         <div
@@ -204,7 +200,9 @@ This pen uses flex and grid for alignment and layout (respectively), and backgro
           <span>B</span>
         </div>
       </div>
-      <div class="style-1 background"></div>
+      <div class="style-1 background">
+        <a href="/"><Icon name="ph:linkedin-logo-duotone" width="40" /></a>
+      </div>
       <div class="style-2 background"></div>
       <div class="style-3 background"></div>
       <div class="style-4 background"></div>
