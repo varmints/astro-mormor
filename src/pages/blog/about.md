@@ -1,0 +1,35 @@
+---
+layout: ../../layouts/AboutLayout.astro
+title: "O stronie"
+---
+
+To minimalistyczny, responsywny i przyjazny dla SEO motyw bloga Astro. Zaprojektowałem i stworzyłem to na potrzeby mojego osobistego bloga.
+
+Ten motyw ma być dostępny od razu po wyjęciu z pudełka. Domyślnie obsługiwane są tryb jasny i ciemny, można także skonfigurować dodatkowe schematy kolorów.
+
+Ten motyw jest samoudokumentowany, co oznacza, że ​​artykuły/posty w tym motywie można również uznać za dokumentację. Zobacz dokumentację, aby uzyskać więcej informacji.
+
+<div>
+  <img src="/assets/dev.svg" class="sm:w-1/2 mx-auto" alt="coding dev illustration">
+</div>
+
+## Tech Stack
+
+Ten motyw jest napisany w Vanilla JavaScript (+ TypeScript do sprawdzania typów) i trochę ReactJS dla niektórych interakcji. TailwindCSS służy do stylizacji; a Markdown jest używany do treści blogów.
+
+## Cechy
+
+Oto niektóre funkcje tej witryny.
+
+- w pełni responsywna i dostępna
+- przyjazna dla SEO
+- tryb jasny i ciemny
+- wyszukiwanie
+- super szybka wydajność
+- projekty postów
+- paginacja
+- mapa witryny i kanał rss
+- wysoce konfigurowalna
+
+Jeśli podoba Ci się ten motyw, możesz dodać gwiazdkę/wnieść wkład w [repo](https://github.com/satnaing/astro-paper).
+Lub możesz nawet przekazać swoją opinię przez [email](mailto:contact@satnaing.dev).

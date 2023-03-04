@@ -1,0 +1,76 @@
+---
+import { Icon } from "astro-icon";
+import HeroImage from "~/components/HeroImage.astro";
+import type { FooterLink } from "~/types";
+
+const { siteTitle } = Astro.props;
+
+const links: Array<FooterLink> = [
+  {
+    url: "https://github.com/varmints",
+    description: "View source on GitHub",
+    icon: "fa-brands:github-alt",
+  },
+  {
+    url: "https://www.linkedin.com/in/kamil-morkisz/",
+    description: "mormor on Linkedin",
+    icon: "fa-brands:linkedin",
+  },
+  {
+    url: "https://www.instagram.com/foto.tfurca/",
+    description: "mormor on Instagram",
+    icon: "fa-brands:instagram",
+  },
+];
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="relative flex h-96 flex-col items-center justify-center md:h-80">
+  <div
+    class="md:pb-24; absolute left-0 top-0 right-0 z-10 bg-default pb-14 content-[''] clip-path-triangle sm:pb-20"
+  >
+  </div>
+  <div class="absolute inset-0 overflow-hidden opacity-40">
+    <HeroImage />
+  </div>
+  <div class="relative">
+    <ul class="grid grid-cols-2 gap-4 sm:grid-cols-4">
+      <li>
+        <button
+          class="flex h-16 w-16 cursor-pointer items-center justify-center rounded-full border-2 border-current p-4"
+          onclick="window.scrollTo(0, 0)"
+        >
+          <span class="sr-only">mormor official website</span>
+          <Icon class="h-full" name="mdi:home" />
+        </button>
+      </li>
+      {
+        links.map((link) => (
+          <li>
+            <a
+              class="flex h-16 w-16 items-center justify-center rounded-full border-2 border-current p-4"
+              href={link.url}
+            >
+              <span class="sr-only">{link.description}</span>
+              <Icon class="h-full" name={link.icon} />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <div class="absolute right-0 left-0 mt-6 text-center">
+      Copyleft
+      <span class="m-0 inline-block scale-x-[-1] text-right">&copy;</span>
+      {currentYear}
+      <span class="separator">|</span>
+      {siteTitle}
+    </div>
+  </div>
+</footer>
+
+<style>
+  .separator {
+    @apply hidden sm:inline;
+  }
+</style>

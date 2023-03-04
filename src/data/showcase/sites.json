@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Odyssey",
+    "image": "./images/odyssey.webp",
+    "url": "https://dev-odyssey.netlify.app"
+  },
+  {
+    "title": "Metaverse",
+    "image": "./images/metaverse.webp",
+    "url": "https://dev-metaverse.netlify.app"
+  },
+  {
+    "title": "Remix Jokes",
+    "image": "./images/remix-jokes.webp",
+    "url": "https://lively-dawn-9080.fly.dev/"
+  }
+]

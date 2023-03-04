@@ -1,0 +1,24 @@
+---
+import ContentSection from "~/components/ContentSection.astro";
+import Instafeed from "./Instafeed.astro";
+
+const data = await fetch("https://feeds.behold.so/QNL1VtO4iz5fDxuirBhu").then(
+  (r) => r.json()
+);
+---
+
+<ContentSection title="Po godzinach" id="after-hours">
+  <Fragment slot="lead">
+    W wolnym czasie <span class="text-primary">fotografuję</span> i chcę się dzielić
+    moim spojrzeniem na świat. Dlatego byłoby miło gdybyś zechciał śledził mój profil
+    na Instagramie.
+  </Fragment>
+  <Instafeed feed={data} />
+  <a
+    href="https://www.instagram.com/foto.tfurca/"
+    class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4 hover:text-secondary focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-transparent"
+    target="_blank"
+  >
+    Zobacz więcej na @foto-tfurca
+  </a>
+</ContentSection>

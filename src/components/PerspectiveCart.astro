@@ -1,0 +1,109 @@
+---
+---
+
+<style>
+  :root {
+    --primary: var(--color-primary);
+    --secondary: var(--color-secondary);
+    --white: theme("colors.neutral.50");
+  }
+
+  pre {
+    --selector: var(--primary);
+    --property: var(--secondary);
+    --punctuation: var(--white);
+    --undefined: var(--white);
+
+    font-size: 3rem;
+    @apply text-xl sm:text-2xl md:text-3xl;
+    font-weight: bold;
+    color: var(--undefined);
+    padding: 2rem;
+    border-radius: 1rem;
+
+    position: relative;
+
+    transform-style: preserve-3d;
+    transform: perspective(5000px) rotateY(var(--rotateX))
+      rotateX(var(--rotateY));
+  }
+
+  pre > * {
+    text-shadow: 0 0 0.3em currentColor;
+  }
+
+  pre::before {
+    content: "";
+    position: absolute;
+    border-radius: inherit;
+  }
+
+  /* shadow */
+  /* pre::before {
+    inset: 0.75rem;
+    border-radius: inherit;
+    background: black;
+    z-index: -1;
+    transform: translateZ(-50px);
+    filter: blur(15px);
+    opacity: 0.5;
+  } */
+
+  .selector {
+    color: var(--selector);
+  }
+
+  .property {
+    color: var(--property);
+  }
+
+  .punctuation {
+    color: var(--punctuation);
+  }
+
+  .property + .punctuation {
+    color: var(--property);
+  }
+
+  .pre-container {
+    position: relative;
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  }
+</style>
+
+<script>
+  const pre = document.querySelector("pre");
+
+  document.addEventListener("mousemove", (e) => {
+    rotateElement(e, pre);
+  });
+
+  function rotateElement(event: any, element: any) {
+    // get mouse position
+    const x = event.clientX;
+    const y = event.clientY;
+    // console.log(x, y)
+
+    // find the middle
+    const middleX = window.innerWidth / 2;
+    const middleY = window.innerHeight / 2;
+    // console.log(middleX, middleY)
+
+    // get offset from middle as a percentage
+    // and tone it down a little
+    const offsetX = ((x - middleX) / middleX) * 45;
+    const offsetY = ((y - middleY) / middleY) * 45;
+    // console.log(offsetX, offsetY);
+
+    // set rotation
+    element.style.setProperty("--rotateX", offsetX + "deg");
+    element.style.setProperty("--rotateY", -1 * offsetY + "deg");
+  }
+</script>
+
+<pre
+  class="language-css"
+  tabindex="0"><code class="language-css"><span class="token selector">.twoja-niezwykła</span> <span class="token punctuation">&lbrace;</span>
+    <span class="token property">strona</span><span class="token punctuation">:</span> internetowa<span class="token punctuation">;</span>
+<span class="token punctuation">&rbrace;</span></code></pre>
