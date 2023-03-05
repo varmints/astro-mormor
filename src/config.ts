@@ -32,13 +32,13 @@ export const SOCIALS: SocialObjects = [
   },
   {
     name: "Instagram",
-    href: "https://instagram.com/foro.tfurca",
+    href: "https://instagram.com/foto.tfurca",
     linkTitle: `${SITE.title} on Instagram`,
     active: true,
   },
   {
     name: "LinkedIn",
-    href: "https://github.com/satnaing/astro-paper",
+    href: "https://www.linkedin.com/in/kamil-morkisz/",
     linkTitle: `${SITE.title} on LinkedIn`,
     active: true,
   },

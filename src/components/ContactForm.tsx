@@ -48,7 +48,6 @@ const ContactForm = () => {
         },
         body: JSON.stringify(payload),
       });
-      console.log(result);
       if (!result.ok) {
         throw new Error("Something went wrong.");
       }
@@ -58,7 +57,6 @@ const ContactForm = () => {
       });
       setFormState(initialFormState);
     } catch (error) {
-      console.log(error);
       setMessage({
         class: "bg-red-700",
         text: "Przepraszam, wystąpił problem. Spróbuj ponownie lub skontaktuj się za pośrednictwem mediów społecznościwych.",
