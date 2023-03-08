@@ -9,7 +9,7 @@ import markdownConfig from "./markdown.config.js";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://dev-mormor.netlify.app/",
+  site: "https://mormor.dev/",
   markdown: markdownConfig,
   integrations: [
     tailwind(),
