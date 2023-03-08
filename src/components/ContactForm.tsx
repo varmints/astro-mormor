@@ -132,7 +132,7 @@ const ContactForm = () => {
             />
             <button
               disabled={submitting}
-              className="flex items-center justify-center gap-3 border-2 border-current px-6 py-4 hover:text-secondary focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-transparent"
+              className="flex items-center justify-center gap-3 border-2 border-current px-6 py-4 text-center hover:text-secondary focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-transparent"
             >
               {submitting ? "Wysyłanie..." : "Wyślij wiadomość"}
             </button>
