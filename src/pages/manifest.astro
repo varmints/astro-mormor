@@ -1,5 +1,14 @@
+---
+import "~/styles/theme.css";
+---
+
 <!DOCTYPE html>
-<html lang="pl">
+<html
+  lang="pl"
+  lang="pl"
+  class="h-full motion-safe:scroll-smooth"
+  data-theme="dark"
+>
   <head>
     <meta charset="utf-8" />
     <link rel="sitemap" href="/sitemap-index.xml" />
@@ -121,6 +130,7 @@
 
 <style>
   body {
+    @apply bg-default text-default;
     max-width: 650px;
     margin: 40px auto;
     padding: 0 10px;
@@ -187,7 +197,6 @@
 
   @media (prefers-color-scheme: dark) {
     body {
-      @apply bg-default;
     }
 
     a:link {
