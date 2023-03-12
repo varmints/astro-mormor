@@ -16,6 +16,9 @@ const { generator, site } = Astro;
 // const image = new URL("social.jpg", site);
 const siteTitle = "mormor";
 const description = "Build fast websites, faster with me. mormor is here.";
+
+// Example: Construct a canonical URL using your production domain
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!DOCTYPE html>
@@ -23,6 +26,7 @@ const description = "Build fast websites, faster with me. mormor is here.";
   <head>
     <meta charset="utf-8" />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
