@@ -3,12 +3,7 @@ import "~/styles/theme.css";
 ---
 
 <!DOCTYPE html>
-<html
-  lang="pl"
-  lang="pl"
-  class="h-full motion-safe:scroll-smooth"
-  data-theme="dark"
->
+<html lang="pl" class="h-full motion-safe:scroll-smooth" data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <link rel="sitemap" href="/sitemap-index.xml" />
@@ -17,6 +12,7 @@ import "~/styles/theme.css";
     <meta name="description" content="mormor - manifest" />
     <title>mormor - manifest</title>
     <link rel="stylesheet" />
+
     <!-- initialize partytown GTM -->
     <script type="text/partytown">
       (function (w, d, s, l, i) {
@@ -30,6 +26,30 @@ import "~/styles/theme.css";
         f.parentNode.insertBefore(j, f);
       })(window, document, "script", "dataLayer", "GTM-WTM5DDC");
     </script>
+
+    <!-- initialize theme -->
+    <script is:inline>
+      const themeSaved = localStorage.getItem("theme");
+
+      if (themeSaved) {
+        document.documentElement.dataset.theme = themeSaved;
+      } else {
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
+      }
+
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", (event) => {
+          if (!localStorage.getItem("theme")) {
+            document.documentElement.dataset.theme = event.matches
+              ? "dark"
+              : "light";
+          }
+        });
+    </script>
   </head>
   <body>
     <h1>To jest strona internetowa.</h1>
@@ -39,8 +59,7 @@ import "~/styles/theme.css";
       Prawdopodobnie tworzysz strony internetowe albo myślisz, że Twoja strona
       internetowa jest wyjątkowa. Myślisz, że Twoja 13-megabajtowa paralaktyczna
       strona główna da tobie jakąś nagrodę w konkursie <a
-        href="https:
-        www.cssdesignawards.com
+        href="https://www.awwwards.com/
         ">Awwward</a
       >. Myślisz, że Twój 40-kilobajtowy plik jQuery i 83 wypełnienia typu
       polyfill dają IE7 w kość, ponieważ w końcu ma box-shadow. Nieprawda.
@@ -193,18 +212,5 @@ import "~/styles/theme.css";
     margin-left: 0;
     margin-right: 0;
     padding-left: 40px;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    body {
-    }
-
-    a:link {
-      color: #58a6ff;
-    }
-
-    a:visited {
-      color: #8e96f0;
-    }
   }
 </style>
