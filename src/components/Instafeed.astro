@@ -17,8 +17,10 @@ const { feed } = Astro.props;
           <Image
             src={item.mediaUrl}
             class="behold-gw-image h-full w-full object-cover"
-            width={600}
-            height={600}
+            width={500}
+            height={500}
+            format="webp"
+            quality={85}
             alt="instagram feed"
           />
         </a>
