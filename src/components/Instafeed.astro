@@ -1,4 +1,5 @@
 ---
+import { Image } from "@astrojs/image/components";
 const { feed } = Astro.props;
 ---
 
@@ -13,10 +14,12 @@ const { feed } = Astro.props;
           href={item.permalink}
           target="_blank"
         >
-          <img
-            class="behold-gw-image h-full w-full object-cover"
+          <Image
             src={item.mediaUrl}
-            alt=""
+            class="behold-gw-image h-full w-full object-cover"
+            width={600}
+            height={600}
+            alt="instagram feed"
           />
         </a>
       </li>
