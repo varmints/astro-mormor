@@ -3,5 +3,6 @@ Disallow: /nogooglebot/
 
 User-agent: *
 Allow: /
+Disallow: /~partytown/
 
 Sitemap: https://mormor.dev/sitemap-index.xml
