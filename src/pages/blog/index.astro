@@ -1,4 +1,5 @@
 ---
+import { SITE } from "~/config";
 import { getCollection } from "astro:content";
 import Layout from "~/layouts/Layout.astro";
 import Header from "~/components/blog/Header.astro";
@@ -19,7 +20,7 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 const socialCount = SOCIALS.filter((social) => social.active).length;
 ---
 
-<Layout>
+<Layout title={`Blog ${SITE.title}`}>
   <Header />
   <main id="main-content">
     <section id="hero">
