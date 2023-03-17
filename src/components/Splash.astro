@@ -2,6 +2,7 @@
 import { Picture } from "@astrojs/image/components";
 import astronautImage from "~/assets/astronaut.webp";
 import HeroImage from "~/components/HeroImage.astro";
+import Starfield from "~/components/Starfield.astro";
 import Status from "~/components/Status.astro";
 import PerspectiveCart from "./PerspectiveCart.astro";
 
@@ -10,6 +11,7 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
 ---
 
 <section class="relative h-full bg-black">
+  <Starfield />
   <div id="splash-bg-fallback" class="absolute inset-0 hidden opacity-40">
     <HeroImage />
   </div>
