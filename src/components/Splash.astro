@@ -1,9 +1,7 @@
 ---
 import { Picture } from "@astrojs/image/components";
-import { Icon } from "astro-icon";
 import astronautImage from "~/assets/astronaut.webp";
 import HeroImage from "~/components/HeroImage.astro";
-import Starfield from "~/components/Starfield.astro";
 import Status from "~/components/Status.astro";
 import PerspectiveCart from "./PerspectiveCart.astro";
 
@@ -12,26 +10,19 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
 ---
 
 <section class="relative h-full bg-black">
-  <Starfield />
   <div id="splash-bg-fallback" class="absolute inset-0 hidden opacity-40">
     <HeroImage />
   </div>
   <div
     class="relative grid h-full place-items-center overflow-hidden md:grid-cols-2"
   >
-    <!-- <h2
-      class="flex flex-col gap-2 self-end md:gap-4 md:self-auto md:justify-self-end"
-    >
-      <ThreeDCart client:only="react" />
-    </h2> -->
     <PerspectiveCart />
-
     <div
       id="astronaut"
       class="mdqq:justify-self-start w-2/3 max-w-3xl self-start md:w-10/12 md:self-auto"
     >
       <Picture
-        class="object-cover w-full h-full"
+        class="h-full w-full object-cover"
         src={astronautImage}
         widths={widths}
         sizes={sizes}
