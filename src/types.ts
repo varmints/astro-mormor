@@ -59,3 +59,13 @@ export type SocialMedia =
   | "Steam"
   | "Telegram"
   | "Mastodon";
+
+export type Site = {
+  website: string;
+  author: string;
+  desc: string;
+  title: string;
+  ogImage: string;
+  lightAndDarkMode: boolean;
+  postPerPage: number;
+};

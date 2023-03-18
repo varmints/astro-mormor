@@ -1,6 +1,6 @@
-import type { SocialObjects } from "./types";
+import type { Site, SocialObjects } from "./types";
 
-export const SITE = {
+export const SITE: Site = {
   website: "https://mormor.dev/",
   author: "Kamil",
   desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
