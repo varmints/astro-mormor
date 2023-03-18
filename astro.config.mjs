@@ -33,5 +33,8 @@ export default defineConfig({
     ssr: {
       external: ["svgo"],
     },
+    optimizeDeps: {
+      exclude: ["@resvg/resvg-js"],
+    },
   },
 });
