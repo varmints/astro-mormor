@@ -4,6 +4,9 @@ dist/
 # generated types
 .astro/
 
+# ignore Jampack cache files
+.jampack/
+
 # dependencies
 node_modules/
 
