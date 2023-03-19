@@ -9,6 +9,7 @@ export interface Props {
   author?: string;
   description?: string;
   ogImage?: string;
+  themeToggle?: boolean;
 }
 
 const {
@@ -16,6 +17,7 @@ const {
   author = SITE.author,
   description = SITE.desc,
   ogImage = SITE.ogImage,
+  themeToggle = SITE.ogImage,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -27,7 +29,7 @@ const socialImageURL = new URL(
 ---
 
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="pl" data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <link rel="sitemap" href="/sitemap-index.xml" />
@@ -87,7 +89,7 @@ const socialImageURL = new URL(
       })(window, document, "script", "dataLayer", "GTM-WTM5DDC");
     </script>
 
-    <script is:inline src="/toggle-theme.js"></script>
+    {themeToggle && <script is:inline src="/toggle-theme.js" />}
   </head>
   <body
     class="flex min-h-screen flex-col bg-skin-fill font-mono text-skin-base selection:bg-skin-accent selection:bg-opacity-70 selection:text-skin-inverted"
