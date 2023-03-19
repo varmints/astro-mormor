@@ -43,7 +43,9 @@ function switchBreadcrumb(breadcrumb: string): string {
           </li>
         ) : (
           <li>
-            <a href={`/blog/${breadcrumb}`}>{breadcrumb}</a>
+            <a href={`/blog/${breadcrumb}`}>
+              {`${switchBreadcrumb(breadcrumb)}`}
+            </a>
             <span aria-hidden="true">&#62;</span>
           </li>
         )
