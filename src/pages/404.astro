@@ -1,17 +1,16 @@
 ---
 import { SITE } from "~/config";
 import Layout from "~/layouts/Layout.astro";
-import Header from "~/components/blog/Header.astro";
 import Footer from "~/components/blog/Footer.astro";
 import LinkButton from "~/components/blog/LinkButton.astro";
 ---
 
 <Layout title={`404 Not Found | ${SITE.title}`}>
-  <Header />
-
   <main id="main-content">
     <div class="not-found-wrapper">
-      <h1 aria-label="404 Not Found">404</h1>
+      <div class="my-28 blur" title="black hole">
+        <b></b>
+      </div>
       <span aria-hidden="true">¯\_(ツ)_/¯</span>
       <p>Page Not Found</p>
       <LinkButton
@@ -38,5 +37,51 @@ import LinkButton from "~/components/blog/LinkButton.astro";
   }
   .not-found-wrapper p {
     @apply mt-4 text-2xl sm:text-3xl;
+  }
+  body {
+    background-color: black !important;
+  }
+  b,
+  b:before,
+  b:after {
+    display: block;
+    border-radius: 50%;
+  }
+  b {
+    width: 50vmin;
+    height: 51vmin;
+    box-shadow: 1vmin 0 3vmin 2vmin #f50, inset -1vmin 0 3vmin 4vmin #f80,
+      -4vmin 0 35vmin 0 #f60;
+    animation: bh 15s linear infinite;
+  }
+  @keyframes bh {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+  b:before,
+  b:after {
+    content: "";
+    background: white;
+    position: relative;
+    top: 6vmin;
+  }
+  b:before {
+    width: 3vmin;
+    height: 3vmin;
+    left: 40vmin;
+    box-shadow: yellow 0 0 2vmin 2vmin, yellow 2vmin 4vmin 2vmin 0.5vmin;
+  }
+  b:after {
+    width: 38vmin;
+    height: 38vmin;
+    opacity: 0.03;
+    left: -14vmin;
+  }
+  .blur {
+    filter: blur(8px);
   }
 </style>
