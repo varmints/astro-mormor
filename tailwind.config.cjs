@@ -36,6 +36,7 @@ module.exports = {
       backgroundColor: {
         default: "var(--color-background)",
         offset: "var(--color-background-offset)",
+        indicator: "var(--color-text-offset)",
         skin: {
           fill: withOpacity("--color-fill"),
           accent: withOpacity("--color-accent"),

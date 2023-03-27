@@ -6,9 +6,10 @@ import Intro from "~/components/Intro.astro";
 import Features from "~/components/Features.astro";
 import Compatibility from "~/components/Compatibility.astro";
 import Showcase from "~/components/Showcase.astro";
-import Footer from "~/components/Footer.astro";
+import PriceList from "~/components/PriceList.astro";
 import Contact from "~/components/Contact.astro";
 import AfterHours from "~/components/AfterHours.astro";
+import Footer from "~/components/Footer.astro";
 
 import "~/styles/index.css";
 
@@ -95,8 +96,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       <Features />
       <Compatibility />
       <Showcase />
+      <PriceList />
       <Contact />
-      <AfterHours />
+      <!-- <AfterHours /> -->
     </div>
     <Footer siteTitle={siteTitle} />
   </body>
