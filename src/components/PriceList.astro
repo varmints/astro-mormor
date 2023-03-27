@@ -131,13 +131,12 @@ import ContentSection from "~/components/ContentSection.astro";
   }
 
   .price p {
-    @apply mx-4 mb-0 mt-1 font-extrabold text-4xl;
+    @apply mx-4 mb-0 mt-2 font-extrabold text-4xl;
     z-index: 2;
   }
 
   .price .shape-two {
-    position: absolute;
-    top: -10px;
+    @apply absolute -top-4 md:-top-3;
     left: 5%;
     mask-repeat: no-repeat;
     width: 100%;
