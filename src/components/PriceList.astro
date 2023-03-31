@@ -1,5 +1,27 @@
 ---
+import type { PriceLevel } from "~/types";
 import ContentSection from "~/components/ContentSection.astro";
+
+const prices: Array<PriceLevel> = [
+  {
+    title: "One page",
+    body: "Strony one page są często stosowane w przypadku prostych stron internetowych, takich jak strony informacyjne, portfolio lub strony promocyjne, gdzie nie ma potrzeby podziału zawartości na wiele podstron. Strony typu one page mogą mieć interaktywną nawigację, taką jak przewijanie paralaksy, które tworzą efekt trójwymiarowy lub animacje przy przewijaniu.",
+    price: "400zł",
+    colorAccent: "offset",
+  },
+  {
+    title: "e-commerce",
+    body: "Strona internetowa typu e-commerce to witryna, która umożliwia kupowanie i sprzedawanie produktów lub usług za pośrednictwem internetu. Taka strona zazwyczaj zawiera wiele funkcji i elementów, które ułatwiają użytkownikom robienie zakupów online i umożliwiają właścicielom sklepu zarządzanie swoim biznesem online.",
+    price: "900zł",
+    colorAccent: "primary",
+  },
+  {
+    title: "Zaawansowana",
+    body: "Zaawansowana strona internetowa to witryna, która wykracza poza standardowe funkcje i oferuje bardziej skomplikowane rozwiązania i interakcje z użytkownikami. Taka strona może być przydatna dla firm, które potrzebują zaawansowanej funkcjonalności, takiej jak personalizacja, interaktywne narzędzia lub integracje z innymi systemami.",
+    price: "1400zł",
+    colorAccent: "secondary",
+  },
+];
 ---
 
 <ContentSection title="Cennik" id="cennik">
@@ -13,98 +35,31 @@ import ContentSection from "~/components/ContentSection.astro";
   <div
     class="price-list__container flex max-w-6xl flex-wrap items-start justify-center gap-4 lg:flex-nowrap"
   >
-    <details class="border border-default bg-offset">
-      <summary
-        class="flex cursor-pointer flex-col items-center gap-4 px-6 pt-8 pb-6 text-center"
-      >
-        <h3 class="font-extrabold text-xl">ONE PAGE</h3>
-        <span class="text-offset text-sm">
-          Strony one page są często stosowane w przypadku prostych stron
-          internetowych, takich jak strony informacyjne, portfolio lub strony
-          promocyjne, gdzie nie ma potrzeby podziału zawartości na wiele
-          podstron. Strony typu one page mogą mieć interaktywną nawigację, taką
-          jak przewijanie paralaksy, które tworzą efekt trójwymiarowy lub
-          animacje przy przewijaniu.
-        </span>
-        <span
-          class="cta-show-price flex items-center justify-center gap-3 border-2 border-current px-6 py-4 text-center hover:text-secondary"
-          data-open="Kliknij, aby poznać cenę"
-          data-close="Kliknij, aby ukryć cenę"></span>
-      </summary>
-      <div class="content">
-        <div
-          class="flex flex-col items-center justify-center border-t border-default px-6 py-4"
-        >
-          <p class="text-offset text-sm">od</p>
+    {
+      prices.map(({ title, body, price, colorAccent }) => (
+        <details class="border-default bg-offset border">
+          <summary class="flex cursor-pointer flex-col items-center gap-4 px-6 pt-8 pb-6 text-center">
+            <h3 class="text-xl font-extrabold uppercase">{title}</h3>
+            <span class="text-offset text-sm">{body}</span>
+            <span
+              class="cta-show-price hover:text-secondary flex items-center justify-center gap-3 border-2 border-current px-6 py-4 text-center"
+              data-open="Kliknij, aby poznać cenę"
+              data-close="Kliknij, aby ukryć cenę"
+            />
+          </summary>
+          <div class="content">
+            <div class="border-default flex flex-col items-center justify-center border-t px-6 py-4">
+              <p class="text-offset text-sm">od</p>
 
-          <div class="price">
-            <p class="pricingtable">400zł</p>
-            <div class="shape-two shape-two"></div>
+              <div class="price">
+                <p class="pricingtable">{price}</p>
+                <div class={`shape-two shape-two--${colorAccent}`} />
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </details>
-    <details class="border border-default bg-offset">
-      <summary
-        class="flex cursor-pointer flex-col items-center gap-4 px-6 pt-8 pb-6 text-center"
-      >
-        <h3 class="font-extrabold text-xl">E-COMMERCE</h3>
-        <span class="text-offset text-sm">
-          Strona internetowa typu e-commerce to witryna, która umożliwia
-          kupowanie i sprzedawanie produktów lub usług za pośrednictwem
-          internetu. Taka strona zazwyczaj zawiera wiele funkcji i elementów,
-          które ułatwiają użytkownikom robienie zakupów online i umożliwiają
-          właścicielom sklepu zarządzanie swoim biznesem online.
-        </span>
-        <span
-          class="cta-show-price flex items-center justify-center gap-3 border-2 border-current px-6 py-4 text-center hover:text-secondary"
-          data-open="Kliknij, aby poznać cenę"
-          data-close="Kliknij, aby ukryć cenę"></span>
-      </summary>
-      <div class="content">
-        <div
-          class="flex flex-col items-center justify-center border-t border-default px-6 py-4"
-        >
-          <p class="text-offset text-sm">od</p>
-
-          <div class="price">
-            <p class="pricingtable">900zł</p>
-            <div class="shape-two shape-two--primary"></div>
-          </div>
-        </div>
-      </div>
-    </details>
-    <details class="border border-default bg-offset">
-      <summary
-        class="flex cursor-pointer flex-col items-center gap-4 px-6 pt-8 pb-6 text-center"
-      >
-        <h3 class="font-extrabold text-xl">ZAAWANSOWANA</h3>
-        <span class="text-offset text-sm">
-          Zaawansowana strona internetowa to witryna, która wykracza poza
-          standardowe funkcje i oferuje bardziej skomplikowane rozwiązania i
-          interakcje z użytkownikami. Taka strona może być przydatna dla firm,
-          które potrzebują zaawansowanej funkcjonalności, takiej jak
-          personalizacja, interaktywne narzędzia lub integracje z innymi
-          systemami.
-        </span>
-        <span
-          class="cta-show-price flex items-center justify-center gap-3 border-2 border-current px-6 py-4 text-center hover:text-secondary"
-          data-open="Kliknij, aby poznać cenę"
-          data-close="Kliknij, aby ukryć cenę"></span>
-      </summary>
-      <div class="content">
-        <div
-          class="flex flex-col items-center justify-center border-t border-default px-6 py-4"
-        >
-          <p class="text-offset text-sm">od</p>
-
-          <div class="price">
-            <p class="pricingtable">1400zł</p>
-            <div class="shape-two shape-two--secondary"></div>
-          </div>
-        </div>
-      </div>
-    </details>
+        </details>
+      ))
+    }
   </div>
 </ContentSection>
 
@@ -139,6 +94,9 @@ import ContentSection from "~/components/ContentSection.astro";
 
   .price .shape-two {
     mask-image: url(/shape-two.png);
+  }
+
+  .price .shape-two.shape-two--offset {
     background: var(--color-text-offset);
   }
 

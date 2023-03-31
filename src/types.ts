@@ -21,6 +21,13 @@ export interface ShowcaseSite {
   url: string;
 }
 
+export interface PriceLevel {
+  title: string;
+  body: string;
+  price: string;
+  colorAccent: string;
+}
+
 export interface FooterLink {
   description: string;
   icon: string;
