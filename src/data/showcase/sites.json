@@ -1,5 +1,10 @@
 [
   {
+    "title": "Yoga",
+    "image": "./images/yoga.webp",
+    "url": "https://dev-yoga.netlify.app"
+  },
+  {
     "title": "Odyssey",
     "image": "./images/odyssey.webp",
     "url": "https://dev-odyssey.netlify.app"
