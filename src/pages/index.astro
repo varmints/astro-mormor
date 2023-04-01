@@ -40,8 +40,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="generator" content={generator} />
     <title>{siteTitle} - strony internetowe</title>
 
-    <!-- social media -->
-    <meta property="og:title" content="Astro" />
+    <!-- social media / open graph -->
+    <meta property="og:title" content={`${siteTitle} - strony internetowe`} />
     <meta property="og:type" content="website" />
     <meta property="og:description" content={description} />
     <meta property="og:image" content="" />
@@ -91,7 +91,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   >
     <Header />
     <Splash />
-    <div class="space-y-24 px-8 pt-32 pb-28">
+    <div class="space-y-24 px-8 pb-28 pt-32">
       <Intro />
       <Features />
       <Compatibility />
