@@ -7,18 +7,13 @@ import LinkButton from "~/components/blog/LinkButton.astro";
 
 <Layout title={`404 Not Found | ${SITE.title}`} themeToggle={false}>
   <main id="main-content">
-    <div class="not-found-wrapper">
-      <div class="my-28 blur" title="black hole">
-        <b></b>
+    <a href="/">
+      <div class="not-found-wrapper">
+        <div class="my-28 blur" title="black hole">
+          <b></b>
+        </div>
       </div>
-      <p>nie znaleziono strony</p>
-      <LinkButton
-        href="/"
-        className="my-6 underline decoration-dashed underline-offset-8 text-lg"
-      >
-        Wróć do strony głównej
-      </LinkButton>
-    </div>
+    </a>
   </main>
 
   <Footer />
@@ -36,9 +31,6 @@ import LinkButton from "~/components/blog/LinkButton.astro";
   }
   .not-found-wrapper p {
     @apply mt-4 text-2xl sm:text-3xl;
-  }
-  body {
-    background-color: black !important;
   }
   b,
   b:before,
