@@ -3,6 +3,11 @@ import "~/styles/theme.css";
 
 // Example: Construct a canonical URL using your production domain
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const { generator, site } = Astro;
+// const image = new URL("social.jpg", site);
+const siteTitle = "mormor";
+const description = "Build fast websites, faster with me. mormor is here.";
 ---
 
 <!DOCTYPE html>
@@ -20,8 +25,15 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
     <meta name="description" content="mormor - manifest" />
-    <title>mormor - manifest</title>
-    <link rel="stylesheet" />
+    <title>{siteTitle} - manifest</title>
+
+    <!-- social media / open graph -->
+    <meta property="og:title" content={`${siteTitle} - strony internetowe`} />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content={site} />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <!-- initialize partytown GTM -->
     <script type="text/partytown">
