@@ -100,7 +100,7 @@ const ContactForm = () => {
             />
             <label
               htmlFor="email"
-              className="absolute -top-5 left-0 cursor-text transition-all text-sm peer-placeholder-shown:top-0 peer-placeholder-shown:text-current peer-placeholder-shown:text-base peer-focus:-top-5 peer-focus:text-secondary peer-focus:text-sm"
+              className="absolute -top-5 left-0 cursor-text text-offset transition-all text-sm peer-placeholder-shown:top-0 peer-placeholder-shown:text-current peer-placeholder-shown:text-base peer-focus:-top-5 peer-focus:text-offset peer-focus:text-sm"
             >
               Adres email
             </label>
@@ -119,17 +119,17 @@ const ContactForm = () => {
             ></textarea>
             <label
               htmlFor="message"
-              className="absolute -top-7 left-0 cursor-text transition-all text-sm peer-placeholder-shown:top-0 peer-placeholder-shown:text-current peer-placeholder-shown:text-base peer-focus:-top-7 peer-focus:text-secondary peer-focus:text-sm"
+              className="absolute -top-7 left-0 cursor-text text-offset transition-all text-sm peer-placeholder-shown:top-0 peer-placeholder-shown:text-current peer-placeholder-shown:text-base peer-focus:-top-7 peer-focus:text-offset peer-focus:text-sm"
             >
               Treść wiadomości
             </label>
           </div>
           <div className="flex justify-center">
-            {/* <Turnstile
+            <Turnstile
               sitekey={captchaKey}
               onVerify={updateCaptchaToken}
               theme="dark"
-            /> */}
+            />
             <button
               disabled={submitting}
               className="flex items-center justify-center gap-3 border-2 border-current px-6 py-4 text-center hover:text-secondary focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-transparent"
