@@ -100,7 +100,7 @@ const ContactForm = () => {
             />
             <label
               htmlFor="email"
-              className="absolute left-0 -top-5 cursor-text transition-all text-sm peer-placeholder-shown:top-0 peer-placeholder-shown:text-current peer-placeholder-shown:text-base peer-focus:-top-5 peer-focus:text-secondary peer-focus:text-sm"
+              className="absolute -top-5 left-0 cursor-text transition-all text-sm peer-placeholder-shown:top-0 peer-placeholder-shown:text-current peer-placeholder-shown:text-base peer-focus:-top-5 peer-focus:text-secondary peer-focus:text-sm"
             >
               Adres email
             </label>
@@ -119,7 +119,7 @@ const ContactForm = () => {
             ></textarea>
             <label
               htmlFor="message"
-              className="absolute left-0 -top-7 cursor-text transition-all text-sm peer-placeholder-shown:top-0 peer-placeholder-shown:text-current peer-placeholder-shown:text-base peer-focus:-top-7 peer-focus:text-secondary peer-focus:text-sm"
+              className="absolute -top-7 left-0 cursor-text transition-all text-sm peer-placeholder-shown:top-0 peer-placeholder-shown:text-current peer-placeholder-shown:text-base peer-focus:-top-7 peer-focus:text-secondary peer-focus:text-sm"
             >
               Treść wiadomości
             </label>
