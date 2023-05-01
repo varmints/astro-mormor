@@ -1,4 +1,10 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import {
+  ChangeEvent,
+  FormEvent,
+  useState,
+  useRef,
+  useLayoutEffect,
+} from "react";
 import Turnstile from "react-turnstile";
 
 type FormState = {
@@ -12,6 +18,11 @@ type ServiceMessage = {
 };
 
 const ContactForm = () => {
+  const [initialHeight, setInitialHeight] = useState(0);
+  const [initialBorderWidth, setInitialBorderWidth] = useState(0);
+
+  const textAreaRef = useRef<HTMLTextAreaElement>(null);
+
   const formId = "zjyGPPkG";
   const formSparkUrl = `https://submit-form.com/${formId}`;
   const captchaKey = "0x4AAAAAAAB45MXKoTcf0Pxb";
@@ -74,9 +85,30 @@ const ContactForm = () => {
     setFormState(updatedFormState);
   };
 
+  const autosizeTextArea = () => {
+    textAreaRef.current!.style.height = `${initialHeight}px`;
+    const newHeight = textAreaRef.current!.scrollHeight + initialBorderWidth;
+    textAreaRef.current!.style.height = `${newHeight}px`;
+  };
+
   const updateCaptchaToken = (token: string | null) => {
     setCaptchaToken(token as string);
   };
+
+  useLayoutEffect(() => {
+    setInitialHeight(
+      parseInt(
+        getComputedStyle(textAreaRef.current!).getPropertyValue("height")
+      )
+    );
+    setInitialBorderWidth(
+      parseInt(
+        getComputedStyle(textAreaRef.current!).getPropertyValue(
+          "border-bottom-width"
+        )
+      )
+    );
+  }, []);
 
   return (
     <form onSubmit={submitForm} className="mx-auto">
@@ -110,9 +142,12 @@ const ContactForm = () => {
               id="message"
               name="message"
               value={formState?.message}
-              onChange={updateFormControl}
-              className="peer w-full border-b-2 border-current bg-transparent placeholder-transparent text-sm focus:outline-none"
-              rows={8}
+              onChange={(e) => {
+                updateFormControl(e);
+                autosizeTextArea();
+              }}
+              ref={textAreaRef}
+              className="peer h-52 w-full resize-none border-b-2 border-current bg-transparent pb-1.5 placeholder-transparent text-sm focus:outline-none"
               minLength={8}
               placeholder="Treść wiadomości"
               required
