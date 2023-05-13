@@ -11,6 +11,8 @@ export const blogSchema = z
     tags: z.array(z.string()).default(["others"]),
     ogImage: z.string().optional(),
     description: z.string(),
+    heroImage: z.string().optional(),
+    updatedDate: z.date().optional(),
   })
   .strict();
 

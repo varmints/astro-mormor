@@ -13,9 +13,9 @@ a,
 
 .gradient-text {
   @apply bg-clip-text text-transparent;
-  @apply animate-text bg-gradient-to-br from-orange-400 via-primary to-orange-400;
+  @apply animate-text bg-gradient-to-br from-indigo-500 via-fuchsia-500 to-pink-500;
 }
 
 .gradient-form-bg {
-  @apply animate-gradient-x bg-gradient-to-br from-orange-400 via-primary to-orange-400;
+  @apply animate-gradient-x bg-gradient-to-br from-indigo-500 via-fuchsia-500 to-pink-500;
 }
