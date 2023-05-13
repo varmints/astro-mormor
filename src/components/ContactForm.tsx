@@ -7,6 +7,8 @@ import {
 } from "react";
 import Turnstile from "react-turnstile";
 
+import "~/styles/contact-form.css";
+
 type FormState = {
   email: string;
   message: string;
@@ -147,7 +149,7 @@ const ContactForm = () => {
                 autosizeTextArea();
               }}
               ref={textAreaRef}
-              className="peer h-52 w-full resize-none border-b-2 border-current bg-transparent pb-1.5 placeholder-transparent text-sm focus:outline-none"
+              className="peer h-52 w-full border-b-2 border-current bg-transparent pb-1.5 placeholder-transparent text-sm focus:outline-none"
               minLength={8}
               placeholder="Treść wiadomości"
               required
