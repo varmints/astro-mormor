@@ -10,6 +10,7 @@ import { SITE } from "./src/config";
 
 // https://astro.build/config
 export default defineConfig({
+  scopedStyleStrategy: "class",
   site: SITE.website,
   markdown: markdownConfig,
   integrations: [
