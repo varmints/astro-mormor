@@ -37,9 +37,10 @@ import Footer from "~/components/blog/Footer.astro";
   b {
     width: 50vmin;
     height: 51vmin;
-    box-shadow: 1vmin 0 3vmin 2vmin #f50, inset -1vmin 0 3vmin 4vmin #f80,
-      -4vmin 0 35vmin 0 #f60;
-    animation: bh 24s linear infinite;
+    box-shadow: 1vmin 0 3vmin 2vmin var(--black-hole),
+      inset -1vmin 0 3vmin 4vmin var(--black-hole-brighter),
+      -4vmin 0 35vmin 0 var(--black-hole);
+    animation: bh 42s linear infinite;
   }
   @keyframes bh {
     0% {
@@ -52,7 +53,7 @@ import Footer from "~/components/blog/Footer.astro";
   b:before,
   b:after {
     content: "";
-    background: white;
+    background: var(--black-hole-white);
     position: relative;
     top: 6vmin;
   }
@@ -60,7 +61,8 @@ import Footer from "~/components/blog/Footer.astro";
     width: 3vmin;
     height: 3vmin;
     left: 40vmin;
-    box-shadow: yellow 0 0 2vmin 2vmin, yellow 2vmin 4vmin 2vmin 0.5vmin;
+    box-shadow: var(--black-hole-accent) 0 0 2vmin 2vmin,
+      var(--black-hole-accent) 2vmin 4vmin 2vmin 0.5vmin;
   }
   b:after {
     width: 38vmin;

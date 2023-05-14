@@ -19,6 +19,10 @@
     --color-card: 52, 63, 96;
     --color-card-muted: 138, 51, 2;
     --color-border: 249, 250, 251;
+    --black-hole-white: theme("colors.pink.50");
+    --black-hole: theme("colors.pink.400");
+    --black-hole-brighter: theme("colors.pink.300");
+    --black-hole-accent: theme("colors.pink.300");
   }
   #sun-svg,
   html[data-theme="dark"] #moon-svg {
@@ -113,9 +117,6 @@
 }
 
 @layer components {
-  .display-none {
-    @apply hidden;
-  }
   .focus-outline {
     @apply outline-2 outline-offset-1 outline-skin-fill focus-visible:no-underline focus-visible:outline-dashed;
   }
