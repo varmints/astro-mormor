@@ -83,7 +83,7 @@ const { activeNav } = Astro.props;
           </li>
           <li>
             <LinkButton
-              href="/search"
+              href="/blog/search"
               className={`focus-outline p-3 sm:p-1 ${
                 activeNav === "search" ? "active" : ""
               }`}
@@ -217,4 +217,3 @@ const { activeNav } = Astro.props;
     menuItems?.classList.toggle("grid");
   });
 </script>
-
