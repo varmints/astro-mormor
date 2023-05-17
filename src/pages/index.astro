@@ -1,4 +1,5 @@
 ---
+import BaseHead, { type Props as HeadProps } from "~/components/BaseHead.astro";
 import Header from "~/components/Header.astro";
 import Splash from "~/components/Splash.astro";
 import Intro from "~/components/Intro.astro";
@@ -9,81 +10,18 @@ import PriceList from "~/components/PriceList.astro";
 import Contact from "~/components/Contact.astro";
 import AfterHours from "~/components/AfterHours.astro";
 import Footer from "~/components/Footer.astro";
-
+import siteInfo from "~/data/site-info";
 import "~/styles/index.css";
 
-const { generator, site } = Astro;
-// const image = new URL("social.jpg", site);
-const siteTitle = "mormor";
-const description = "Build fast websites, faster with me. mormor is here.";
+export type Props = HeadProps;
 
-// Example: Construct a canonical URL using your production domain
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const { ...head } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="pl" class="h-full motion-safe:scroll-smooth" data-theme="dark">
   <head>
-    <meta charset="utf-8" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="canonical" href={canonicalURL} />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="theme-color" content="#ffffff" />
-    <meta name="description" content={description} />
-    <meta name="generator" content={generator} />
-    <title>{siteTitle} - strony internetowe</title>
-
-    <!-- social media / open graph -->
-    <meta property="og:title" content={`${siteTitle} - strony internetowe`} />
-    <meta property="og:type" content="website" />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content="" />
-    <meta property="og:url" content={site} />
-    <meta name="twitter:card" content="summary_large_image" />
-
-    <!-- initialize partytown GTM -->
-    <script type="text/partytown">
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-WTM5DDC");
-    </script>
-
-    <!-- initialize theme -->
-    <script is:inline>
-      const themeSaved = localStorage.getItem("theme");
-
-      if (themeSaved) {
-        document.documentElement.dataset.theme = themeSaved;
-      } else {
-        const prefersDark = window.matchMedia(
-          "(prefers-color-scheme: dark)"
-        ).matches;
-        document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
-      }
-
-      window
-        .matchMedia("(prefers-color-scheme: dark)")
-        .addEventListener("change", (event) => {
-          if (!localStorage.getItem("theme")) {
-            document.documentElement.dataset.theme = event.matches
-              ? "dark"
-              : "light";
-          }
-        });
-    </script>
+    <BaseHead {...head} />
   </head>
   <body
     class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
@@ -99,6 +37,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       <Contact />
       <AfterHours />
     </div>
-    <Footer siteTitle={siteTitle} />
+    <Footer siteTitle={siteInfo.name} />
   </body>
 </html>

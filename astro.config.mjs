@@ -34,6 +34,7 @@ export default defineConfig({
   vite: {
     ssr: {
       external: ["svgo"],
+      noExternal: ["smartypants"],
     },
     optimizeDeps: {
       exclude: ["@resvg/resvg-js"],

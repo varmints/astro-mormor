@@ -1,44 +1,114 @@
 ---
-// Import the global.css file here so that it is included on
-// all pages through the use of the <BaseHead /> component.
-import "../styles/global.css";
+import FiraSansLatin400 from "@fontsource/fira-sans/files/fira-sans-latin-400-normal.woff2";
+import FiraSansLatin800 from "@fontsource/fira-sans/files/fira-sans-latin-800-normal.woff2";
+import "@fontsource/fira-sans/latin-400.css";
+import "@fontsource/fira-sans/latin-800.css";
+import smartypants from "smartypants";
+import siteInfo from "~/data/site-info";
+import Favicon from "./Favicon.astro";
+import SEO from "./SEO.astro";
 
-export interface Props {
-  title: string;
-  description: string;
-  image?: string;
-}
+export type Props = {
+  title?: string;
+  description?: string;
+  image?: { src: string; alt: string };
+  canonicalURL?: URL | null;
+  pageType?: "website" | "article";
+  ogImage?: string;
+  themeToggle?: boolean;
+};
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const twitterHandle = "astrodotbuild";
 
-const { title, description, image = "/placeholder-social.jpg" } = Astro.props;
+const {
+  description = siteInfo.description,
+  image = siteInfo.image,
+  canonicalURL = new URL(Astro.request.url, Astro.site),
+  pageType = "website",
+} = Astro.props as Props;
+
+const title = [Astro.props.title, siteInfo.name].filter(Boolean).join(" | ");
+const resolvedImage = {
+  src: new URL(image.src, Astro.site).toString(),
+  alt: image.alt,
+};
 ---
 
-{/* Global Metadata */}
+<!-- Global Metadata -->
 <meta charset="utf-8" />
 <link rel="sitemap" href="/sitemap-index.xml" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<meta name="generator" content={Astro.generator} />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#818cf8" />
 
-{/* Canonical URL */}
-<link rel="canonical" href={canonicalURL} />
+<Favicon />
+<link rel="mask-icon" href="/favicon.svg" color="#818cf8" />
+<link rel="sitemap" href="/sitemap-index.xml" />
 
-<!-- Primary Meta Tags -->
-<title>{title}</title>
-<meta name="title" content={title} />
-<meta name="description" content={description} />
+<title set:html={smartypants(title, 1)} />
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content={Astro.url} />
-<meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image, Astro.url)} />
+<SEO
+  name={siteInfo.name}
+  title={title}
+  description={description}
+  image={resolvedImage}
+  twitter={{ handle: twitterHandle }}
+  og={{ type: pageType }}
+  canonicalURL={canonicalURL}
+/>
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={Astro.url} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.url)} />
+<!-- Font preloads -->
+
+<link
+  rel="preload"
+  href={FiraSansLatin400}
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+<link
+  rel="preload"
+  href={FiraSansLatin800}
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+
+<!-- initialize partytown GTM -->
+<script type="text/partytown">
+  (function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != "dataLayer" ? "&l=" + l : "";
+    j.async = true;
+    j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, "script", "dataLayer", "GTM-WTM5DDC");
+</script>
+
+<!-- initialize theme -->
+<script is:inline>
+  const themeSaved = localStorage.getItem("theme");
+
+  if (themeSaved) {
+    document.documentElement.dataset.theme = themeSaved;
+  } else {
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+    document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
+  }
+
+  window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", (event) => {
+      if (!localStorage.getItem("theme")) {
+        document.documentElement.dataset.theme = event.matches
+          ? "dark"
+          : "light";
+      }
+    });
+</script>
+
+<!-- image preloads -->

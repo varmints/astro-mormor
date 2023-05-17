@@ -1,78 +1,16 @@
 ---
+import BaseHead, { type Props as HeadProps } from "~/components/BaseHead.astro";
 import "~/styles/theme.css";
 
-// Example: Construct a canonical URL using your production domain
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+export type Props = HeadProps;
 
-const { generator, site } = Astro;
-// const image = new URL("social.jpg", site);
-const siteTitle = "mormor";
-const description = "Build fast websites, faster with me. mormor is here.";
+const { ...head } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="pl" class="h-full motion-safe:scroll-smooth" data-theme="dark">
   <head>
-    <meta charset="utf-8" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="canonical" href={canonicalURL} />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="theme-color" content="#ffffff" />
-    <meta name="generator" content={generator} />
-    <meta name="description" content="mormor - manifest" />
-    <title>{siteTitle} - manifest</title>
-
-    <!-- social media / open graph -->
-    <meta property="og:title" content={`${siteTitle} - strony internetowe`} />
-    <meta property="og:type" content="website" />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content="" />
-    <meta property="og:url" content={site} />
-    <meta name="twitter:card" content="summary_large_image" />
-
-    <!-- initialize partytown GTM -->
-    <script type="text/partytown">
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-WTM5DDC");
-    </script>
-
-    <!-- initialize theme -->
-    <script is:inline>
-      const themeSaved = localStorage.getItem("theme");
-
-      if (themeSaved) {
-        document.documentElement.dataset.theme = themeSaved;
-      } else {
-        const prefersDark = window.matchMedia(
-          "(prefers-color-scheme: dark)"
-        ).matches;
-        document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
-      }
-
-      window
-        .matchMedia("(prefers-color-scheme: dark)")
-        .addEventListener("change", (event) => {
-          if (!localStorage.getItem("theme")) {
-            document.documentElement.dataset.theme = event.matches
-              ? "dark"
-              : "light";
-          }
-        });
-    </script>
+    <BaseHead {...head} title="Manifest" />
   </head>
   <body>
     <main>
@@ -174,83 +112,82 @@ const description = "Build fast websites, faster with me. mormor is here.";
       </p>
       <!-- yes, I know...wanna fight about it? -->
     </main>
+    <style>
+      html {
+        color-scheme: light dark;
+      }
+      body {
+        @apply bg-default text-default;
+        font: 1.125rem/1.5 system-ui;
+      }
+
+      main {
+        width: min(65ch, 100% - 4rem);
+        margin-inline: auto;
+      }
+
+      img,
+      svg,
+      video {
+        max-width: 100%;
+        display: block;
+      }
+
+      h1 {
+        display: block;
+        font-size: 2em;
+        margin-top: 0.67em;
+        margin-bottom: 0.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+      }
+
+      h2 {
+        display: block;
+        font-size: 1.5em;
+        margin-top: 0.83em;
+        margin-bottom: 0.83em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+      }
+
+      h3 {
+        display: block;
+        font-size: 1.17em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+      }
+
+      p {
+        display: block;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      blockquote {
+        display: block;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 40px;
+        margin-right: 40px;
+      }
+
+      ul {
+        display: block;
+        list-style-type: disc;
+        margin-top: 1em;
+        margin-bottom: 1 em;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 40px;
+      }
+    </style>
   </body>
 </html>
-
-<style>
-  html {
-    color-scheme: light dark;
-  }
-  body {
-    @apply bg-default text-default;
-    font: 1.125rem/1.5 system-ui;
-  }
-
-  main {
-    width: min(65ch, 100% - 4rem);
-    margin-inline: auto;
-  }
-
-  img,
-  svg,
-  video {
-    max-width: 100%;
-    display: block;
-  }
-
-  h1 {
-    display: block;
-    font-size: 2em;
-    margin-top: 0.67em;
-    margin-bottom: 0.67em;
-    margin-left: 0;
-    margin-right: 0;
-    font-weight: bold;
-  }
-
-  h2 {
-    display: block;
-    font-size: 1.5em;
-    margin-top: 0.83em;
-    margin-bottom: 0.83em;
-    margin-left: 0;
-    margin-right: 0;
-    font-weight: bold;
-  }
-
-  h3 {
-    display: block;
-    font-size: 1.17em;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    margin-left: 0;
-    margin-right: 0;
-    font-weight: bold;
-  }
-
-  p {
-    display: block;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  blockquote {
-    display: block;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    margin-left: 40px;
-    margin-right: 40px;
-  }
-
-  ul {
-    display: block;
-    list-style-type: disc;
-    margin-top: 1em;
-    margin-bottom: 1 em;
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 40px;
-  }
-</style>
