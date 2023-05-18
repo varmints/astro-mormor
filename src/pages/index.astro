@@ -7,7 +7,7 @@ import Features from "~/components/Features.astro";
 import Compatibility from "~/components/Compatibility.astro";
 import Showcase from "~/components/Showcase.astro";
 import PriceList from "~/components/PriceList.astro";
-// import Contact from "~/components/Contact.astro";
+import Contact from "~/components/Contact.astro";
 import AfterHours from "~/components/AfterHours.astro";
 import Footer from "~/components/Footer.astro";
 import siteInfo from "~/data/site-info";
@@ -34,7 +34,7 @@ const { ...head } = Astro.props;
       <Compatibility />
       <Showcase />
       <PriceList />
-      <!-- <Contact /> -->
+      <Contact />
       <AfterHours />
     </div>
     <Footer siteTitle={siteInfo.name} />
