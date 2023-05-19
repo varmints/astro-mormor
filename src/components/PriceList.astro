@@ -37,18 +37,18 @@ const prices: Array<PriceLevel> = [
   >
     {
       prices.map(({ title, body, price, colorAccent }) => (
-        <details class="border-default bg-offset border">
+        <details class="border border-default bg-offset">
           <summary class="flex cursor-pointer flex-col items-center gap-4 px-6 pb-6 pt-8 text-center">
-            <h3 class="text-xl font-extrabold uppercase">{title}</h3>
+            <h3 class="font-extrabold uppercase text-xl">{title}</h3>
             <span class="text-offset text-sm">{body}</span>
             <span
-              class="cta-show-price hover:text-secondary flex items-center justify-center gap-3 border-2 border-current px-6 py-4 text-center"
+              class="cta-show-price flex items-center justify-center gap-3 border-2 border-current px-6 py-4 text-center hover:text-secondary"
               data-open="Kliknij, aby poznać cenę"
               data-close="Kliknij, aby ukryć cenę"
             />
           </summary>
           <div class="content">
-            <div class="border-default flex flex-col items-center justify-center border-t px-6 py-4">
+            <div class="flex flex-col items-center justify-center border-t border-default px-6 py-4">
               <p class="text-offset text-sm">od</p>
 
               <div class="price">
@@ -88,8 +88,7 @@ const prices: Array<PriceLevel> = [
 
   .price .shape-two {
     @apply absolute -top-4 h-full w-full md:-top-3;
-    left: 5%;
-    mask-repeat: no-repeat;
+    mask-repeat: round;
   }
 
   .price .shape-two {
