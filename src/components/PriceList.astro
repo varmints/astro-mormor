@@ -53,7 +53,6 @@ const prices: Array<PriceLevel> = [
 
               <div class="price">
                 <p class="pricingtable">{price}</p>
-                <div class={`shape-two shape-two--${colorAccent}`} />
               </div>
             </div>
           </div>
@@ -79,32 +78,11 @@ const prices: Array<PriceLevel> = [
   }
 
   .price {
-    @apply relative flex h-24 justify-center;
+    @apply relative flex h-16 justify-center md:h-20;
   }
 
   .price p {
     @apply z-10 mx-4 mb-0 mt-2 font-extrabold text-4xl;
-  }
-
-  .price .shape-two {
-    @apply absolute -top-4 h-full w-full md:-top-3;
-    mask-repeat: round;
-  }
-
-  .price .shape-two {
-    mask-image: url(/shape-two.png);
-  }
-
-  .price .shape-two.shape-two--offset {
-    background: var(--color-text-offset);
-  }
-
-  .price .shape-two.shape-two--secondary {
-    background: var(--color-secondary);
-  }
-
-  .price .shape-two.shape-two--primary {
-    background: var(--color-primary);
   }
 </style>
 
