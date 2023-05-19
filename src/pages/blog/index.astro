@@ -1,7 +1,7 @@
 ---
 import { SITE } from "~/config";
 import { getCollection } from "astro:content";
-import Layout from "~/layouts/Layout.astro";
+import BlogLayout from "~/layouts/BlogLayout.astro";
 import Header from "~/components/blog/Header.astro";
 import Footer from "~/components/blog/Footer.astro";
 import LinkButton from "~/components/blog/LinkButton.astro";
@@ -20,7 +20,7 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 const socialCount = SOCIALS.filter((social) => social.active).length;
 ---
 
-<Layout title={`Blog | ${SITE.title}`}>
+<BlogLayout title={`Blog | ${SITE.title}`}>
   <Header />
   <main id="main-content">
     <section id="hero">
@@ -110,12 +110,12 @@ const socialCount = SOCIALS.filter((social) => social.active).length;
   </main>
 
   <Footer />
-</Layout>
+</BlogLayout>
 
 <style>
   /* ===== Hero Section ===== */
   #hero {
-    @apply pt-8 pb-6;
+    @apply pb-6 pt-8;
   }
   #hero h1 {
     @apply my-4 inline-block font-bold text-3xl sm:my-8 sm:text-5xl;
@@ -133,13 +133,13 @@ const socialCount = SOCIALS.filter((social) => social.active).length;
     @apply mt-4 flex flex-col sm:flex-row sm:items-center;
   }
   .social-links {
-    @apply mr-2 mb-1 whitespace-nowrap sm:mb-0;
+    @apply mb-1 mr-2 whitespace-nowrap sm:mb-0;
   }
 
   /* ===== Featured & Recent Posts Sections ===== */
   #featured,
   #recent-posts {
-    @apply pt-12 pb-6;
+    @apply pb-6 pt-12;
   }
   #featured h2,
   #recent-posts h2 {
