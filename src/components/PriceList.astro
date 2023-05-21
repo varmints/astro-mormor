@@ -36,7 +36,7 @@ const prices: Array<PriceLevel> = [
     class="price-list__container flex max-w-6xl flex-wrap items-start justify-center gap-4 lg:flex-nowrap"
   >
     {
-      prices.map(({ title, body, price, colorAccent }) => (
+      prices.map(({ title, body, price }) => (
         <details class="border border-default bg-offset">
           <summary class="flex cursor-pointer flex-col items-center gap-4 px-6 pb-6 pt-8 text-center">
             <h3 class="font-extrabold uppercase text-xl">{title}</h3>

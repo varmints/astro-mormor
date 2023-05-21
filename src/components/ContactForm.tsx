@@ -134,7 +134,7 @@ const ContactForm = () => {
             />
             <label
               htmlFor="email"
-              className="absolute -top-5 left-0 cursor-text text-offset transition-all text-sm peer-placeholder-shown:top-0 peer-placeholder-shown:text-current peer-placeholder-shown:text-base peer-focus:-top-5 peer-focus:text-offset peer-focus:text-sm"
+              className="absolute -top-3.5 left-0 text-gray-600 transition-all text-sm peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm"
             >
               Adres email
             </label>
