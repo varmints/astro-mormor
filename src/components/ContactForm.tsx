@@ -128,7 +128,7 @@ const ContactForm = () => {
               type="email"
               value={formState?.email}
               onChange={updateFormControl}
-              className="peer h-10 w-full border-b-2 border-current bg-transparent placeholder-transparent text-sm focus:outline-none"
+              className="peer h-10 w-full border-b-2 border-gray-300 text-gray-900 placeholder-transparent focus:border-rose-600 focus:outline-none"
               placeholder="Adres email"
               required
             />
