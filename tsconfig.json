@@ -10,5 +10,5 @@
     "importsNotUsedAsValues": "remove"
   },
   "include": ["**/*", ".eslintrc.cjs"],
-  "exclude": ["node_modules", "dist", ".jampack", ".astro"]
+  "exclude": ["node_modules", "dist", ".astro"]
 }

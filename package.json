@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "astro check --watch & astro dev",
     "start": "astro dev",
-    "build": "astro build && jampack ./dist --onlycomp",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --write .",
@@ -14,7 +14,6 @@
   },
   "devDependencies": {
     "@astrojs/tailwind": "^3.1.3",
-    "@divriots/jampack": "^0.11.4",
     "@fontsource/fira-sans": "^4.5.10",
     "@tailwindcss/typography": "^0.5.9",
     "@types/micromodal": "^0.3.3",
