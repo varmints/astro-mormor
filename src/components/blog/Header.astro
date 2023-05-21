@@ -15,11 +15,12 @@ const { activeNav } = Astro.props;
   <div class="nav-container">
     <div class="top-nav-wrap">
       <div class="logo-links">
-        <a href="/" class="logo logo-home">
-          {SITE.title}
-        </a>
-        <br />
-        <a href="/blog" class="logo hover:text-skin-accent"> blog</a>
+        <div class="logo">
+          <a href="/">
+            {SITE.title}
+          </a>
+          <a href="/blog" class="hover:text-skin-accent">blog</a>
+        </div>
       </div>
       <nav id="nav-menu">
         <button
@@ -119,7 +120,7 @@ const { activeNav } = Astro.props;
     @apply relative flex w-full items-start justify-between p-4 sm:items-center sm:py-8;
   }
   .logo {
-    @apply absolute py-1 font-semibold text-xl sm:static sm:text-2xl;
+    @apply absolute py-1 font-semibold text-xl sm:static sm:py-0 sm:text-2xl;
   }
   .hamburger-menu {
     @apply self-end p-2 sm:hidden;
