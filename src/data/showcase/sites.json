@@ -1,5 +1,10 @@
 [
   {
+    "title": "Suhiman",
+    "image": "./images/sushiman.png",
+    "url": "https://dev-sushiman.netlify.app"
+  },
+  {
     "title": "Yoga",
     "image": "./images/yoga.webp",
     "url": "https://dev-yoga.netlify.app"
