@@ -21,6 +21,12 @@ const prices: Array<PriceLevel> = [
     price: "1400zł",
     colorAccent: "secondary",
   },
+  {
+    title: "Non-profit",
+    body: "Jeśli reprezentujesz organizację pozarządową, której działania skierowane są na zaspokajanie interesów o charakterze nieekonomicznym możemy nawiązać współpracę na specjalnych warunkach. Moja oferta jest elastyczna i dostosowana do indywidualnych potrzeb organizacji oraz łączy wszystkie trzy wymienione powyżej typy stron internetowych na zamówienie.",
+    price: "0zł",
+    colorAccent: "secondary",
+  },
 ];
 ---
 
@@ -33,7 +39,7 @@ const prices: Array<PriceLevel> = [
     >. W zaleności od typu strony można mówić o pewnych orientacyjnych cenach.
   </Fragment>
   <div
-    class="price-list__container flex max-w-6xl flex-wrap items-start justify-center gap-4 lg:flex-nowrap"
+    class="price-list__container flex max-w-6xl flex-wrap items-start justify-center gap-4"
   >
     {
       prices.map(({ title, body, price }) => (
