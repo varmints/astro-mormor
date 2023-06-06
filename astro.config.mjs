@@ -13,6 +13,7 @@ export default defineConfig({
   scopedStyleStrategy: "class",
   site: SITE.website,
   markdown: markdownConfig,
+  compressHTML: true,
   integrations: [
     tailwind(),
     partytown({

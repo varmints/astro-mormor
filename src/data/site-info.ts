@@ -21,7 +21,8 @@ export type SiteInfo = {
 const siteInfo: SiteInfo = {
   name: "mormor",
   title: "Strona internetowa, którą chcesz",
-  description: "Build fast websites, faster with me. mormor is here.",
+  description:
+    "Tworzę strony internetowe, które są funkcjonalne, wydajne i stanowią doskonałą reprezentację osoby lub firmy w cyfrowym wszechświecie. Build fast websites, faster with me. mormor is here.",
   image: {
     src: "/og/social.jpg",
     alt: "Build the web you want",
