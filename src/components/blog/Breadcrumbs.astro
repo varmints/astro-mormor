@@ -27,11 +27,11 @@ function switchBreadcrumb(breadcrumb: string): string {
   <ul>
     <li>
       <a href="/">Strona główna</a>
-      <span aria-hidden="true">&#62;</span>
+      <span aria-hidden="true">&ensp;&#62;&ensp;</span>
     </li>
     <li>
       <a href="/blog">Blog</a>
-      <span aria-hidden="true">&#62;</span>
+      <span aria-hidden="true">&ensp;&#62;&ensp;</span>
     </li>
     {
       breadcrumbList.map((breadcrumb, index) =>
@@ -50,7 +50,7 @@ function switchBreadcrumb(breadcrumb: string): string {
             <a href={`/blog/${breadcrumb}`}>
               {`${switchBreadcrumb(breadcrumb)}`}
             </a>
-            <span aria-hidden="true">&#62;</span>
+            <span aria-hidden="true">&ensp;&#62;&ensp;</span>
           </li>
         )
       )
