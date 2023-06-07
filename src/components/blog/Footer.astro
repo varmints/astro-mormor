@@ -17,11 +17,11 @@ const { noMarginTop = false } = Astro.props;
   <div class="footer-wrapper">
     <Socials centered />
     <div class="copyright-wrapper">
-      Copyleft
+      <span>Copyleft&thinsp;</span>
       <span class="m-0 inline-block scale-x-[-1] text-right">&copy;</span>
-      {currentYear}
-      <span class="separator">&ensp;|&ensp;</span>
-      {siteTitle}
+      <span>&thinsp;{currentYear}</span>
+      <span class="separator">&thinsp;|</span>
+      <span>&thinsp;{siteTitle}</span>
     </div>
   </div>
 </footer>
