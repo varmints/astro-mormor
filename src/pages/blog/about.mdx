@@ -3,7 +3,6 @@ layout: ../../layouts/AboutLayout.astro
 title: "O stronie"
 ---
 
-import { Image } from "@astrojs/image/components";
 import devdesk from "src/assets/dev.svg";
 
 To minimalistyczny, responsywny i przyjazny dla SEO motyw bloga Astro. Zaprojektowałem i stworzyłem to na potrzeby mojego osobistego bloga.
@@ -13,7 +12,7 @@ Ten motyw ma być dostępny od razu po wyjęciu z pudełka. Domyślnie obsługiw
 Ten motyw jest samoudokumentowany, co oznacza, że ​​artykuły/posty w tym motywie można również uznać za dokumentację. Zobacz dokumentację, aby uzyskać więcej informacji.
 
 <div>
-  <Image src={devdesk} width={300} alt="coding dev illustration" />
+  <img src={devdesk.src} width={300} alt="coding dev illustration" />
 </div>
 
 ## Tech Stack

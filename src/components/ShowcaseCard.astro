@@ -1,5 +1,5 @@
 ---
-import { Picture } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 import type { ShowcaseSite } from "~/types";
 
 export interface Props {
@@ -16,8 +16,8 @@ function getRootDomain(s: string) {
 
 const shortUrl = getRootDomain(site.url);
 
-const widths = [450, 800];
-const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
+// const widths = [450, 800];
+// const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
 ---
 
 <a
@@ -26,11 +26,10 @@ const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
   target="_blank"
 >
   <figure class="relative h-full w-full overflow-hidden">
-    <Picture
+    <Image
       class="h-full w-full bg-cover object-cover transition-all duration-300 group-hover:scale-110 group-hover:opacity-20 group-focus:scale-110 group-focus:opacity-20"
       src={site.image}
-      widths={widths}
-      sizes={sizes}
+      width={800}
       alt={`A screenshot of ${site.url}`}
     />
     <figcaption class="absolute inset-0">

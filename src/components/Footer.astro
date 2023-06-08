@@ -33,6 +33,7 @@ const currentYear = new Date().getFullYear();
   </div>
   <div class="absolute inset-0 overflow-hidden opacity-40">
     <HeroImage />
+    <div class="bg-grid absolute inset-0 mix-blend-plus-lighter"></div>
   </div>
   <div class="relative">
     <ul class="grid grid-cols-2 gap-4 sm:grid-cols-4">
@@ -72,5 +73,21 @@ const currentYear = new Date().getFullYear();
 <style>
   .separator {
     @apply hidden sm:inline;
+  }
+
+  .bg-grid {
+    background-size: 20px 20px;
+    background-image: linear-gradient(to right, #23262d 1px, transparent 1px),
+      linear-gradient(to bottom, #23262d 1px, transparent 1px);
+    background-position: top center;
+    image-rendering: pixelated;
+    mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      30%,
+      white,
+      90%,
+      transparent
+    );
   }
 </style>

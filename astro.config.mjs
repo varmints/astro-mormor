@@ -1,5 +1,4 @@
 import { defineConfig } from "astro/config";
-import image from "@astrojs/image";
 import tailwind from "@astrojs/tailwind";
 import partytown from "@astrojs/partytown";
 import mdx from "@astrojs/mdx";
@@ -22,9 +21,6 @@ export default defineConfig({
         forward: ["dataLayer.push"],
       },
     }),
-    image({
-      serviceEntryPoint: "@astrojs/image/sharp",
-    }),
     mdx({
       ...markdownConfig,
       extendPlugins: false,
@@ -40,5 +36,8 @@ export default defineConfig({
     optimizeDeps: {
       exclude: ["@resvg/resvg-js"],
     },
+  },
+  experimental: {
+    assets: true,
   },
 });
