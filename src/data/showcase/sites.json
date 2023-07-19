@@ -22,6 +22,11 @@
   {
     "title": "Remix Jokes",
     "image": "./images/remix-jokes.webp",
-    "url": "https://lively-dawn-9080.fly.dev/"
+    "url": "https://lively-dawn-9080.fly.dev"
+  },
+  {
+    "title": "Great Music",
+    "image": "./images/your-vue-music.png",
+    "url": "https://your-vue-music.netlify.app/"
   }
 ]
