@@ -5,12 +5,11 @@ import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import markdownConfig from "./markdown.config.js";
-import { SITE } from "./src/config";
 
 // https://astro.build/config
 export default defineConfig({
   scopedStyleStrategy: "class",
-  site: SITE.website,
+  site: "https://mormor.dev/",
   markdown: markdownConfig,
   compressHTML: true,
   integrations: [

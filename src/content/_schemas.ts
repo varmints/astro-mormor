@@ -13,6 +13,7 @@ export const blogSchema = z
     description: z.string(),
     heroImage: z.string().optional(),
     updatedDate: z.date().optional(),
+    canonicalURL: z.string().optional(),
   })
   .strict();
 
