@@ -43,7 +43,7 @@ const prices: Array<PriceLevel> = [
   >
     {
       prices.map(({ title, body, price }) => (
-        <details class="border border-default bg-offset">
+        <details class="border border-default bg-offset focus:bg-white">
           <summary class="flex cursor-pointer flex-col items-center gap-4 px-6 pb-6 pt-8 text-center">
             <h3 class="font-extrabold uppercase text-xl">{title}</h3>
             <span class="text-offset text-sm">{body}</span>
@@ -69,6 +69,9 @@ const prices: Array<PriceLevel> = [
 </ContentSection>
 
 <style>
+  details {
+    -webkit-tap-highlight-color: transparent;
+  }
   details summary::-webkit-details-marker {
     @apply hidden;
   }
