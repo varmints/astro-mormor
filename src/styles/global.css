@@ -1,6 +1,5 @@
 /* TODO: consider creating <Button> and <GradientText> components */
 html {
-  scroll-behavior: smooth;
   scroll-padding: 0;
 }
 
