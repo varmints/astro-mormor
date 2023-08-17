@@ -1,3 +1,4 @@
 dist/
 .output/
 .astro/
+node_modules/**
