@@ -30,6 +30,7 @@ export default function SearchBar({ searchList }: Props) {
 
 	const clearField = () => {
 		setInputVal('')
+		inputRef.current!.focus()
 	}
 
 	const fuse = useMemo(
