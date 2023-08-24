@@ -1,24 +1,33 @@
 ---
-import ContentSection from "~/components/ContentSection.astro";
-import ShowcaseCard from "~/components/ShowcaseCard.astro";
-import { getShowcase } from "~/data/showcase";
+import ContentSection from '~/components/ContentSection.astro'
+import ShowcaseCard from '~/components/ShowcaseCard.astro'
+import { getShowcase } from '~/data/showcase'
+import siteInfo from '~/data/site-info'
 
-const sites = await getShowcase();
+const sites = await getShowcase()
+const [githubLink] = siteInfo.socialLinks.filter((item) => item.platform === 'github')
 ---
 
 <ContentSection title="Przykłady" id="przyklady">
-  <Fragment slot="lead">
-    Jestem <span class="text-primary">wszechstronny</span>. Sprawdź, co
-    przygotowałem do tej pory i zainspiruj się.
-  </Fragment>
-  <div class="max-w-6xl space-y-2">
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-      {sites.map((site) => <ShowcaseCard site={site} />)}
-    </div>
-    {
-      /* <p class="text-right text-sm">
+	<Fragment slot="lead">
+		Jestem <span class="text-primary">wszechstronny</span>. Sprawdź, co przygotowałem do tej pory i
+		zainspiruj się.
+	</Fragment>
+	<div class="max-w-6xl space-y-2">
+		<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+			{sites.map((site) => <ShowcaseCard site={site} />)}
+		</div>
+		{
+			/* <p class="text-right text-sm">
       <a class="text-primary" href="#"> ...i więcej &rarr;</a>
     </p> */
-    }
-  </div>
+		}
+	</div>
+	<a
+		href={githubLink.href}
+		class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4 text-center hover:text-secondary focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-transparent"
+		target="_blank"
+	>
+		Zobacz więcej na Github
+	</a>
 </ContentSection>
