@@ -14,107 +14,104 @@ description: Tworzenie responsywnych układów może być trochę trudne, więc 
 Tworzenie responsywnych układów może być trochę trudne, więc przyjrzyjmy się pięciu różnym układom, które możemy stworzyć za pomocą zaledwie kilku wierszy CSS, a jako bonus wykonamy je wszystkie bez jakichkolwiek zapytań o media. Wszystkie przykłady zostały stworze z myślą aby łatwo je skopiować i użyć jako szkielet w innym projekcie. Przejdźmy od razu do pierwszego przykładu.
 
 <p
-  class="codepen"
-  data-height="300"
-  data-default-tab="html,result"
-  data-slug-hash="mdGXmpw"
-  data-user="varmints"
-  style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+	class="codepen"
+	data-height="300"
+	data-default-tab="html,result"
+	data-slug-hash="mdGXmpw"
+	data-user="varmints"
+	style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
 >
-  <span>
-    See the Pen{" "}
-    <a href="https://codepen.io/varmints/pen/mdGXmpw">the cluster</a> by mormor
-    (<a href="https://codepen.io/varmints">@varmints</a>) on{" "}
-    <a href="https://codepen.io">CodePen</a>.
-  </span>
+	<span>
+		See the Pen <a href="https://codepen.io/varmints/pen/mdGXmpw">the cluster</a> by mormor (
+		<a href="https://codepen.io/varmints">@varmints</a>) on <a href="https://codepen.io">CodePen</a>
+		.
+	</span>
 </p>
 
 W kazdym przykładzie w tym artykule mamy ten sam układ wyjściowy. Rodzica z klasą `parent` i dzieci, kazdy z klasa `child`. W przypadku powyzej mamy dodatkowo do rodzica dodaną klasę `cluster` z właściwościwościami:
 
 ```css
 .cluster {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
 }
 ```
 
 Kluczowa jest właściwość: `flex-wrap: wrap;` która sprawia, ze elementy mogą być zawijane do wielu lini.
 
 <p
-  class="codepen"
-  data-height="300"
-  data-default-tab="html,result"
-  data-slug-hash="JjavpXw"
-  data-user="varmints"
-  style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+	class="codepen"
+	data-height="300"
+	data-default-tab="html,result"
+	data-slug-hash="JjavpXw"
+	data-user="varmints"
+	style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
 >
-  <span>
-    See the Pen <a href="https://codepen.io/varmints/pen/JjavpXw">auto-grid</a>{" "}
-    by mormor (<a href="https://codepen.io/varmints">@varmints</a>) on{" "}
-    <a href="https://codepen.io">CodePen</a>.
-  </span>
+	<span>
+		See the Pen <a href="https://codepen.io/varmints/pen/JjavpXw">auto-grid</a> by mormor (
+		<a href="https://codepen.io/varmints">@varmints</a>) on <a href="https://codepen.io">CodePen</a>
+		.
+	</span>
 </p>
 
 Przykład powyżej jest już bardziej zaawansowany i pozwala osiągnąć interesujący efekt. Wszystkie dzieci mają tę samę szerokość i próbują podzielić między sobą całą szerokość rodzica, ale wraz ze zmniejszeniem szerokości rodzica i osięgnięciu pewnej ustalonej przez nas minimalnej szerokości kolumny `--min-column-size` przełąmują się do nowego rzędu.
 
 <p
-  class="codepen"
-  data-height="300"
-  data-default-tab="html,result"
-  data-slug-hash="VwGxXMb"
-  data-user="varmints"
-  style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+	class="codepen"
+	data-height="300"
+	data-default-tab="html,result"
+	data-slug-hash="VwGxXMb"
+	data-user="varmints"
+	style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
 >
-  <span>
-    See the Pen{" "}
-    <a href="https://codepen.io/varmints/pen/VwGxXMb">flexible-grid</a> by
-    mormor (<a href="https://codepen.io/varmints">@varmints</a>) on{" "}
-    <a href="https://codepen.io">CodePen</a>.
-  </span>
+	<span>
+		See the Pen <a href="https://codepen.io/varmints/pen/VwGxXMb">flexible-grid</a> by mormor (
+		<a href="https://codepen.io/varmints">@varmints</a>) on <a href="https://codepen.io">CodePen</a>
+		.
+	</span>
 </p>
 
 Powyższy przykład jest podobny do poprzedniego, ale w tym wypadku dzieci nie są tej samej szerokości. Jednak dzięki właściwości:
 
 ```css
 .flexible-grid > * {
-  flex: 1;
+	flex: 1;
 }
 ```
 
 będą próbowały zająć całą szerokość rodzica.
 
 <p
-  class="codepen"
-  data-height="300"
-  data-default-tab="html,result"
-  data-slug-hash="PodeeJv"
-  data-user="varmints"
-  style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+	class="codepen"
+	data-height="300"
+	data-default-tab="html,result"
+	data-slug-hash="PodeeJv"
+	data-user="varmints"
+	style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
 >
-  <span>
-    See the Pen <a href="https://codepen.io/varmints/pen/PodeeJv">reel</a> by
-    mormor (<a href="https://codepen.io/varmints">@varmints</a>) on{" "}
-    <a href="https://codepen.io">CodePen</a>.
-  </span>
+	<span>
+		See the Pen <a href="https://codepen.io/varmints/pen/PodeeJv">reel</a> by mormor (
+		<a href="https://codepen.io/varmints">@varmints</a>) on <a href="https://codepen.io">CodePen</a>
+		.
+	</span>
 </p>
 
 Powyższy przykład jest nieco inny, przypomina układ charakterystyczny dla relacji publikowanych na instagramie. Przesunięcie w prawo lub lewo powoduje ustawienie na początku dziecka. Dodatkowo można wskazać ile dzieci ma się mieścić w jednym widoku.
 
 <p
-  class="codepen"
-  data-height="300"
-  data-default-tab="html,result"
-  data-slug-hash="JjaZEvX"
-  data-user="varmints"
-  style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+	class="codepen"
+	data-height="300"
+	data-default-tab="html,result"
+	data-slug-hash="JjaZEvX"
+	data-user="varmints"
+	style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
 >
-  <span>
-    See the Pen{" "}
-    <a href="https://codepen.io/varmints/pen/JjaZEvX">main with sidebar</a> by
-    mormor (<a href="https://codepen.io/varmints">@varmints</a>) on{" "}
-    <a href="https://codepen.io">CodePen</a>.
-  </span>
+	<span>
+		See the Pen <a href="https://codepen.io/varmints/pen/JjaZEvX">main with sidebar</a> by mormor (
+		<a href="https://codepen.io/varmints">@varmints</a>) on <a href="https://codepen.io">CodePen</a>
+		.
+	</span>
 </p>
 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
