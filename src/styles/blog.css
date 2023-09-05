@@ -115,6 +115,11 @@
 		@apply bg-skin-card-muted;
 	}
 
+	code {
+		white-space: pre;
+		overflow: scroll;
+	}
+
 	@media (hover: hover) {
 		.clear-button {
 			@apply hover:text-skin-accent;

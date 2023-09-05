@@ -1,10 +1,11 @@
 ---
+import { getCollection } from 'astro:content'
 import ContentSection from '~/components/ContentSection.astro'
 import ShowcaseCard from '~/components/ShowcaseCard.astro'
-import { getShowcase } from '~/data/showcase'
-import siteInfo from '~/data/site-info'
+import { siteInfo } from '~/config'
 
-const sites = await getShowcase()
+const featuredSites = await getCollection('showcase', ({ data }) => 'featured' in data)
+const orderedSites = featuredSites.sort((a, b) => a.data.featured! - b.data.featured!)
 const [githubLink] = siteInfo.socialLinks.filter((item) => item.platform === 'github')
 ---
 
@@ -15,7 +16,7 @@ const [githubLink] = siteInfo.socialLinks.filter((item) => item.platform === 'gi
 	</Fragment>
 	<div class="max-w-6xl space-y-2">
 		<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-			{sites.map((site) => <ShowcaseCard site={site} />)}
+			{orderedSites.map((site) => <ShowcaseCard site={site} />)}
 		</div>
 		{
 			/* <p class="text-right text-sm">

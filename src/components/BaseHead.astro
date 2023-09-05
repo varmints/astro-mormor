@@ -1,37 +1,37 @@
 ---
-import FiraSansLatin400 from "@fontsource/fira-sans/files/fira-sans-latin-400-normal.woff2";
-import FiraSansLatin800 from "@fontsource/fira-sans/files/fira-sans-latin-800-normal.woff2";
-import "@fontsource/fira-sans/latin-400.css";
-import "@fontsource/fira-sans/latin-800.css";
-import smartypants from "smartypants";
-import siteInfo from "~/data/site-info";
-import Favicon from "./Favicon.astro";
-import SEO from "./SEO.astro";
+import FiraSansLatin400 from '@fontsource/fira-sans/files/fira-sans-latin-400-normal.woff2'
+import FiraSansLatin800 from '@fontsource/fira-sans/files/fira-sans-latin-800-normal.woff2'
+import '@fontsource/fira-sans/latin-400.css'
+import '@fontsource/fira-sans/latin-800.css'
+import smartypants from 'smartypants'
+import { siteInfo } from '~/config'
+import Favicon from './Favicon.astro'
+import SEO from './SEO.astro'
 
 export type Props = {
-  title?: string;
-  description?: string;
-  image?: { src: string; alt: string };
-  canonicalURL?: URL | null;
-  pageType?: "website" | "article";
-  ogImage?: string;
-  themeToggle?: boolean;
-};
+	title?: string
+	description?: string
+	image?: { src: string; alt: string }
+	canonicalURL?: URL | null
+	pageType?: 'website' | 'article'
+	ogImage?: string
+	themeToggle?: boolean
+}
 
-const twitterHandle = "mormordotdev";
+const twitterHandle = 'mormordotdev'
 
 const {
-  description = siteInfo.description,
-  image = siteInfo.image,
-  canonicalURL = new URL(Astro.request.url, Astro.site),
-  pageType = "website",
-} = Astro.props as Props;
+	description = siteInfo.description,
+	image = siteInfo.image,
+	canonicalURL = new URL(Astro.request.url, Astro.site),
+	pageType = 'website'
+} = Astro.props as Props
 
-const title = [Astro.props.title, siteInfo.name].filter(Boolean).join(" | ");
+const title = [Astro.props.title, siteInfo.name].filter(Boolean).join(' | ')
 const resolvedImage = {
-  src: new URL(image.src, Astro.site).toString(),
-  alt: image.alt,
-};
+	src: new URL(image.src, Astro.site).toString(),
+	alt: image.alt
+}
 ---
 
 <!-- Global Metadata -->
@@ -42,79 +42,56 @@ const resolvedImage = {
 <Favicon />
 <link rel="mask-icon" href="/favicon.svg" color="#818cf8" />
 <link rel="sitemap" href="/sitemap-index.xml" />
-<link
-  rel="alternate"
-  type="application/rss+xml"
-  title="mormor RSS Feed"
-  href="/blog/rss.xml"
-/>
+<link rel="alternate" type="application/rss+xml" title="mormor RSS Feed" href="/blog/rss.xml" />
 
 <title set:html={smartypants(title, 1)} />
 
 <SEO
-  name={siteInfo.name}
-  title={title}
-  description={description}
-  image={resolvedImage}
-  twitter={{ handle: twitterHandle }}
-  og={{ type: pageType }}
-  canonicalURL={canonicalURL}
+	name={siteInfo.name}
+	title={title}
+	description={description}
+	image={resolvedImage}
+	twitter={{ handle: twitterHandle }}
+	og={{ type: pageType }}
+	canonicalURL={canonicalURL}
 />
 
 <!-- Font preloads -->
 
-<link
-  rel="preload"
-  href={FiraSansLatin400}
-  as="font"
-  type="font/woff2"
-  crossorigin
-/>
+<link rel="preload" href={FiraSansLatin400} as="font" type="font/woff2" crossorigin />
 
-<link
-  rel="preload"
-  href={FiraSansLatin800}
-  as="font"
-  type="font/woff2"
-  crossorigin
-/>
+<link rel="preload" href={FiraSansLatin800} as="font" type="font/woff2" crossorigin />
 
 <!-- initialize partytown GTM -->
 <script type="text/partytown">
-  (function (w, d, s, l, i) {
-    w[l] = w[l] || [];
-    w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-    var f = d.getElementsByTagName(s)[0],
-      j = d.createElement(s),
-      dl = l != "dataLayer" ? "&l=" + l : "";
-    j.async = true;
-    j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-    f.parentNode.insertBefore(j, f);
-  })(window, document, "script", "dataLayer", "GTM-WTM5DDC");
+	;(function (w, d, s, l, i) {
+		w[l] = w[l] || []
+		w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
+		var f = d.getElementsByTagName(s)[0],
+			j = d.createElement(s),
+			dl = l != 'dataLayer' ? '&l=' + l : ''
+		j.async = true
+		j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+		f.parentNode.insertBefore(j, f)
+	})(window, document, 'script', 'dataLayer', 'GTM-WTM5DDC')
 </script>
 
 <!-- initialize theme -->
 <script is:inline>
-  const themeSaved = localStorage.getItem("theme");
+	const themeSaved = localStorage.getItem('theme')
 
-  if (themeSaved) {
-    document.documentElement.dataset.theme = themeSaved;
-  } else {
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-    document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
-  }
+	if (themeSaved) {
+		document.documentElement.dataset.theme = themeSaved
+	} else {
+		const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+		document.documentElement.dataset.theme = prefersDark ? 'dark' : 'light'
+	}
 
-  window
-    .matchMedia("(prefers-color-scheme: dark)")
-    .addEventListener("change", (event) => {
-      if (!localStorage.getItem("theme")) {
-        document.documentElement.dataset.theme = event.matches
-          ? "dark"
-          : "light";
-      }
-    });
+	window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
+		if (!localStorage.getItem('theme')) {
+			document.documentElement.dataset.theme = event.matches ? 'dark' : 'light'
+		}
+	})
 </script>
 
 <!-- image preloads -->
