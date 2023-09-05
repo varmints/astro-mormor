@@ -1,12 +1,14 @@
 ---
 import { Image } from 'astro:assets'
 import type { CollectionEntry } from 'astro:content'
+import { resolveImage } from '~/content/showcase/_resolveImage.js'
 
 export interface Props {
 	site: CollectionEntry<'showcase'>
 }
 
 const { site } = Astro.props
+const image = await resolveImage(site)
 
 function getRootDomain(s: string): string {
 	return s.replace(/http(s)?(:)?(\/\/)?|(\/\/)?(www\.)?/g, '').match(/^(?:\/\/|[^\/]+)*/g)
@@ -19,7 +21,7 @@ const shortUrl: string = getRootDomain(site.data.url)
 	<figure class="relative h-full w-full overflow-hidden">
 		<Image
 			class="h-full w-full bg-cover object-cover transition-all duration-300 group-hover:scale-110 group-hover:opacity-20 group-focus:scale-110 group-focus:opacity-20"
-			src={site.data.image}
+			src={image}
 			width={800}
 			height={400}
 			loading={'eager'}
