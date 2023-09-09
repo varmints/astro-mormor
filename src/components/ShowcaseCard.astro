@@ -10,11 +10,11 @@ export interface Props {
 const { site } = Astro.props
 const image = await resolveImage(site)
 
-function getRootDomain(s: string): string {
+function getRootDomain(s: string): RegExpMatchArray | null {
 	return s.replace(/http(s)?(:)?(\/\/)?|(\/\/)?(www\.)?/g, '').match(/^(?:\/\/|[^\/]+)*/g)
 }
 
-const shortUrl: string = getRootDomain(site.data.url)
+const shortUrl: RegExpMatchArray | null = getRootDomain(site.data.url)
 ---
 
 <a class="group border border-default hover:!text-default" href={site.data.url} target="_blank">
