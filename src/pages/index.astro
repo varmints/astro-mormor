@@ -12,6 +12,7 @@ import AfterHours from '~/components/AfterHours.astro'
 import Footer from '~/components/Footer.astro'
 import { siteInfo } from '~/config'
 import '~/styles/index.css'
+import RelayLove from '~/components/RelayLove.astro'
 
 export type Props = HeadProps
 
@@ -36,6 +37,7 @@ const { ...head } = Astro.props
 			<PriceList />
 			<Contact />
 			<AfterHours />
+			<RelayLove />
 		</div>
 		<Footer siteTitle={siteInfo.name} />
 	</body>

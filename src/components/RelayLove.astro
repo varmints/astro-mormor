@@ -1,0 +1,30 @@
+---
+import ContentSection from '~/components/ContentSection.astro'
+---
+
+<ContentSection title="Relay Love" id="relay-love">
+	<Fragment slot="lead">
+		Help people safely access the internet using <a
+			class="text-primary"
+			rel="me noopener noreferrer"
+			target="_blank"
+			href="https://snowflake.torproject.org/">Snowflake</a
+		>. To share your connection, enable the toggle and keep this tab open. Avoid sharing from
+		censored locations.
+	</Fragment>
+	<div class="grid max-w-6xl grid-cols-1">
+		<div class="place-self-center">
+			<iframe src="https://snowflake.torproject.org/embed.html" width="320" height="240"></iframe>
+		</div>
+		<div class="my-4 place-self-center">
+			<p>
+				✊ An anti-censorship project by <a
+					class="text-primary"
+					rel="me noopener noreferrer"
+					target="_blank"
+					href="https://scidsg.org">Science &amp; Design</a
+				>
+			</p>
+		</div>
+	</div>
+</ContentSection>
