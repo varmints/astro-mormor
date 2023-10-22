@@ -1,24 +1,25 @@
 ---
-import ContentSection from "~/components/ContentSection.astro";
-import ContactForm from "~/components/ContactForm";
+import ContentSection from '~/components/ContentSection.astro'
+import ContactForm from '~/components/ContactForm'
+import { getLocale } from 'astro-i18n-aut'
+import { t } from '../utils/i18n.ts'
+
+const locale = getLocale(Astro.url)
+const localedData = t(locale)
 ---
 
-<ContentSection title="Kontakt" id="kontakt">
-  <Fragment slot="lead">
-    Jeśli chcesz się tylko <span class="text-primary"
-      >przywitać i porozmawiać</span
-    > o kilku pomysłach, z przyjemnością przyjmę to połączenie.
-  </Fragment>
-  <div class="flex w-full max-w-xl flex-col justify-center py-6">
-    <div class="relative mx-auto w-full">
-      <div class="relative border border-default bg-offset px-6 py-12 sm:px-8">
-        <h3
-          class="absolute right-4 top-0 -translate-y-1/2 rounded-full border border-current bg-default px-4 py-1 uppercase tracking-tight text-xs"
-        >
-          Napisz wiadomość
-        </h3>
-        <ContactForm client:only="react" />
-      </div>
-    </div>
-  </div>
+<ContentSection title={localedData.home.contact} id="kontakt">
+	<Fragment set:html={localedData.home.contactLead} slot="lead" />
+	<div class="flex w-full max-w-xl flex-col justify-center py-6">
+		<div class="relative mx-auto w-full">
+			<div class="relative border border-default bg-offset px-6 py-12 sm:px-8">
+				<h3
+					class="absolute right-4 top-0 -translate-y-1/2 rounded-full border border-current bg-default px-4 py-1 uppercase tracking-tight text-xs"
+				>
+					Napisz wiadomość
+				</h3>
+				<ContactForm client:only="react" />
+			</div>
+		</div>
+	</div>
 </ContentSection>

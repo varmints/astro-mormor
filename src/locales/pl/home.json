@@ -1,0 +1,73 @@
+{
+	"slogan": {
+		"a": "Professionalism",
+		"b": "Transparency",
+		"c": "Innovation"
+	},
+	"splash": {
+		"status": "Status",
+		"message": "Obecnie dryfuję między pracą a rodziną, ale jestem dostępny dla Twojego projektu. <a href='/#kontakt' class='font-accent font-extrabold text-primary'>Zostaw wiadomość!</a>"
+	},
+	"hello": "Cześć! 👋",
+	"intro": {
+		"content": "Tworzę <span class='text-primary'>strony internetowe</span>, które są funkcjonalne, wydajne i stanowią doskonałą reprezentację osoby lub firmy <span class='text-primary'>w cyfrowym wszechświecie</span>.",
+		"btnBlog": "Odkrywaj blog",
+		"btnManifesto": "Czytaj manifest"
+	},
+	"advantages": "Zalety",
+	"advantagesSubtitle": "Wykorzystuję najlepsze części <span class='text-primary'>najnowocześniejszych</span> narzędzi i dodaję własne <span class='text-primary'>innowacje</span>.",
+	"advantagesDetails": [
+		{
+			"title": "Proces",
+			"description": "Preferuję metodę pracy zwaną Rapid Applications Development. Sprawdza się najlepiej w przypadku projektów, które można ulepszyć w nieskończoność.",
+			"icon": "mdi:handshake"
+		},
+		{
+			"title": "Prędkość i wydajność",
+			"description": "Zawsze stawiam na doświadczenie użytkownika, które będzie pozytywne tylko jeśli strony będę działać szybko na każdym urządzeniu.",
+			"icon": "mdi:feather"
+		},
+		{
+			"title": "Integracje",
+			"description": "CMS, chatboty, systemy płatności, serwisy z opiniami i wiele więcej może zostać w krótkim czasie dodane do twojej strony.",
+			"icon": "mdi:graph"
+		},
+		{
+			"title": "E-commerce",
+			"description": "Chcesz przekształcić swoją witrynę w sklep internetowy? W dzisiejszych czasach to dla mnie jasne jak słońce.",
+			"icon": "mdi:basket-outline"
+		},
+		{
+			"title": "Pozycjonowanie SEO",
+			"description": "Automatyczne sitemapy, feedy RSS, HTTPS i wszystkie inne problemy z SEO rozwiązywane od pierwszej wersji projektu.",
+			"icon": "mdi:web"
+		},
+		{
+			"title": "Elastyczność",
+			"description": "Zmieniłeś zdanie na tematy funkcjonalności w czasie prac nad projektem? Nic nie szkodzi, dobrze to rozumiem. Jesteśmy odkrywcami!",
+			"icon": "mdi:directions-fork"
+		}
+	],
+	"technologies": "Nowoczesne technologie",
+	"technologiesSubtitle": "Wykorzystuję <span class='text-primary'>frameworki</span>, które najlepiej pasują do <span class='text-primary'>Twojego projektu</span>. Natępnie wdrażam projekt na niezawodne <span class='text-primary'>platformy</span>.",
+	"andMore": " ...i więcej",
+	"frameworks": "Frameworki",
+	"platforms": "Platformy",
+	"examples": "Przykłady",
+	"examplesSubtitle": "Jestem <span class='text-primary'>wszechstronny</span>. Sprawdź, co przygotowałem do tej pory i zainspiruj się. ",
+	"examplesSeeMore": "Zobacz więcej na Github",
+	"priceList": "Cennik",
+	"priceListSubtitle": "Ostateczna <span class='text-primary'>cena</span> za stronę internetową jest zawsze <span class='text-primary'>ustalana indywidualnie</span>. Konsultacja i <span class='text-primary'>wycena</span> jest zawsze <span class='text-primary'>darmowa</span>. W zaleności od typu strony można mówić o pewnych orientacyjnych cenach.",
+	"priceListOpen": "Kliknij, aby poznać cenę",
+	"priceListClose": "Kliknij, aby ukryć cenę",
+	"contact": "Kontakt",
+	"contactLead": "Jeśli chcesz się tylko <span class='text-primary'>przywitać i porozmawiać</span> o kilku pomysłach, z przyjemnością przyjmę to połączenie.",
+	"afterHours": "Po godzinach",
+	"afterHoursLead": "W wolnym czasie <span class='text-primary'>fotografuję</span> i chcę się dzielić moją pasją. Dlatego byłoby miło gdybyś zechciał śledził mój profil na Instagramie.",
+	"afterHoursSeeMore": "Zobacz więcej na @foto.tfurca",
+	"relay": "Relay",
+	"relayLead": "Pomóż ludziom bezpiecznie uzyskać dostęp do Internetu, korzystając z <a class='text-primary' rel='me noopener noreferrer' target='_blank' href='https://snowflake.torproject.org/'>Snowflake</a>. Aby udostępnić połączenie, włącz przełącznik i pozostaw tę kartę otwartą. Unikaj udostępniania z cenzurowanych miejsc.",
+	"about": "O mnie",
+	"projects": "Projects",
+	"services": "Services"
+}

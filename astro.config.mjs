@@ -4,12 +4,23 @@ import partytown from '@astrojs/partytown'
 import mdx from '@astrojs/mdx'
 import react from '@astrojs/react'
 import sitemap from '@astrojs/sitemap'
+import { i18n, filterSitemapByDefaultLocale } from 'astro-i18n-aut/integration'
 import markdownConfig from './markdown.config.js'
+
+const defaultLocale = 'pl'
+const locales = {
+	en: 'en-US',
+	pl: 'pl-PL'
+}
 
 // https://astro.build/config
 export default defineConfig({
 	scopedStyleStrategy: 'class',
-	site: 'https://mormor.dev/',
+	site: 'https://mormor.dev',
+	trailingSlash: 'never',
+	build: {
+		format: 'file'
+	},
 	markdown: markdownConfig,
 	integrations: [
 		tailwind(),
@@ -24,7 +35,17 @@ export default defineConfig({
 			extendPlugins: false
 		}),
 		react(),
-		sitemap()
+		i18n({
+			locales,
+			defaultLocale
+		}),
+		sitemap({
+			i18n: {
+				locales,
+				defaultLocale
+			},
+			filter: filterSitemapByDefaultLocale({ defaultLocale })
+		})
 	],
 	vite: {
 		ssr: {

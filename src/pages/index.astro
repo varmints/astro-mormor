@@ -13,14 +13,43 @@ import Footer from '~/components/Footer.astro'
 import { siteInfo } from '~/config'
 import '~/styles/index.css'
 import RelayLove from '~/components/RelayLove.astro'
+import { getLocale } from 'astro-i18n-aut'
+import { t, localedURL } from '~/utils/i18n.ts'
 
 export type Props = HeadProps
 
 const { ...head } = Astro.props
+
+const locale = getLocale(Astro.url)
+const localedData = t(locale)
 ---
 
-<!doctype html>
-<html lang="pl" class="h-full motion-safe:scroll-smooth" data-theme="dark">
+<script>
+	const langNotification = document.getElementById('lang-notification')
+	if (
+		!localStorage.getItem('langModalInteraction') &&
+		window.navigator.language !== 'uk' &&
+		window.navigator.language !== 'uk-UA'
+	) {
+		langNotification?.style.setProperty('display', 'block')
+	}
+
+	const langUKButton = document.getElementById('lang-uk')
+	const langENButton = document.getElementById('lang-en')
+
+	langENButton?.addEventListener('click', () => {
+		localStorage.setItem('langModalInteraction', 'true')
+		langNotification?.style.setProperty('display', 'none')
+		window.location.href = '/en'
+	})
+
+	langUKButton?.addEventListener('click', () => {
+		localStorage.setItem('langModalInteraction', 'true')
+		langNotification?.style.setProperty('display', 'none')
+	})
+</script>
+
+<html lang={locale} class="h-full motion-safe:scroll-smooth" data-theme="dark">
 	<head>
 		<BaseHead {...head} title="Strony internetowe skrojone na miarę" />
 	</head>

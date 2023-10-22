@@ -1,29 +1,29 @@
 ---
-import { Icon } from "astro-icon";
-import ContentSection from "~/components/ContentSection.astro";
+import { Icon } from 'astro-icon'
+import ContentSection from '~/components/ContentSection.astro'
+import { getLocale } from 'astro-i18n-aut'
+import { t } from '../utils/i18n.ts'
+
+const locale = getLocale(Astro.url)
+const localedData = t(locale)
 ---
 
-<ContentSection title="Cześć! 👋" id="intro">
-  <Fragment slot="lead">
-    Tworzę <span class="text-primary">strony internetowe</span>, które są
-    funkcjonalne, wydajne i stanowią doskonałą reprezentację osoby lub firmy <span
-      class="text-primary">w cyfrowym wszechświecie</span
-    >.
-  </Fragment>
-  <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
-    <a
-      href="/blog"
-      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4 text-center"
-    >
-      <Icon pack="mdi" name="telescope" class="h-8" />
-      <span>Odkrywaj blog</span>
-    </a>
-    <a
-      href="/manifest"
-      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4 text-center"
-    >
-      <Icon pack="mdi" name="rocket" class="h-8" />
-      <span>Czytaj manifest</span>
-    </a>
-  </div>
+<ContentSection title={localedData.home.hello} id="intro">
+	<Fragment set:html={localedData.home.intro.content} slot="lead" />
+	<div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
+		<a
+			href="/blog"
+			class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4 text-center"
+		>
+			<Icon pack="mdi" name="telescope" class="h-8" />
+			<span>{localedData.home.intro.btnBlog}</span>
+		</a>
+		<a
+			href="/manifest"
+			class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4 text-center"
+		>
+			<Icon pack="mdi" name="rocket" class="h-8" />
+			<span>{localedData.home.intro.btnManifesto}</span>
+		</a>
+	</div>
 </ContentSection>

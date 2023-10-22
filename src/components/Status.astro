@@ -1,29 +1,25 @@
 ---
+import { getLocale } from 'astro-i18n-aut'
+import { t, localedURL } from '../utils/i18n.ts'
+
+const locale = getLocale(Astro.url)
+const localedData = t(locale)
 ---
 
 <div
-  class="group absolute right-2 top-2 animate-[show_0s_both] animation-delay-1500 md:left-1 md:right-[initial] md:top-1/2"
+	class="group absolute right-2 top-2 animate-[show_0s_both] animation-delay-1500 md:left-1 md:right-[initial] md:top-1/2"
 >
-  <div class="flex items-center gap-2 rounded-md bg-gray-900 px-3 py-1">
-    <span class="text-white text-sm md:text-base">Status</span>
-    <span class="relative flex h-3 w-3 md:h-4 md:w-4">
-      <span
-        class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"
-      ></span>
-      <span
-        class="relative inline-flex h-3 w-3 rounded-full bg-primary md:h-4 md:w-4"
-      ></span>
-    </span>
-  </div>
-  <div
-    class="invisible absolute right-0 top-10 w-[250px] translate-y-1 rounded-md bg-gray-900 p-4 text-white transition-all duration-300 text-sm group-hover:visible group-hover:-translate-y-1 md:top-12 md:text-base"
-  >
-    <p>
-      Obecnie dryfuję między pracą a rodziną, ale jestem dostępny dla Twojego
-      projektu.
-    </p>
-    <a href="/#kontakt" class="font-accent font-extrabold text-primary"
-      >Zostaw wiadomość!</a
-    >
-  </div>
+	<div class="flex items-center gap-2 rounded-md bg-gray-900 px-3 py-1">
+		<span class="text-white text-sm md:text-base">{localedData.home.splash.status}</span>
+		<span class="relative flex h-3 w-3 md:h-4 md:w-4">
+			<span
+				class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"
+			></span>
+			<span class="relative inline-flex h-3 w-3 rounded-full bg-primary md:h-4 md:w-4"></span>
+		</span>
+	</div>
+	<div
+		class="invisible absolute right-0 top-10 w-[250px] translate-y-1 rounded-md bg-gray-900 p-4 text-white transition-all duration-300 text-sm group-hover:visible group-hover:-translate-y-1 md:top-12 md:text-base"
+		set:html={localedData.home.splash.message}
+	/>
 </div>

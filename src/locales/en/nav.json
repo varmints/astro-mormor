@@ -1,0 +1,10 @@
+{
+	"navItems": [
+		{ "title": "Blog", "url": "/blog" },
+		{ "title": "Advantages", "url": "/#advantages" },
+		{ "title": "Examples", "url": "/#examples" },
+		{ "title": "Price list", "url": "/#price-list" },
+		{ "title": "Contact", "url": "/#contact" },
+		{ "title": "After hours", "url": "/#after-hours" }
+	]
+}

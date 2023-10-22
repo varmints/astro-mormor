@@ -1,238 +1,268 @@
 ---
-import type { PriceLevel } from "~/types";
-import ContentSection from "~/components/ContentSection.astro";
+import type { PriceLevel } from '~/types'
+import ContentSection from '~/components/ContentSection.astro'
+import { getLocale } from 'astro-i18n-aut'
+import { t } from '../utils/i18n.ts'
 
-const prices: Array<PriceLevel> = [
-  {
-    title: "One page",
-    body: "Strony one page są często stosowane w przypadku prostych stron internetowych, takich jak strony informacyjne, portfolio lub strony promocyjne, gdzie nie ma potrzeby podziału zawartości na wiele podstron. Strony typu one page mogą mieć interaktywną nawigację, taką jak przewijanie paralaksy, które tworzą efekt trójwymiarowy lub animacje przy przewijaniu.",
-    price: "400 zł",
-    colorAccent: "offset",
-  },
-  {
-    title: "e-commerce",
-    body: "Strona internetowa typu e-commerce to witryna, która umożliwia kupowanie i sprzedawanie produktów lub usług za pośrednictwem internetu. Taka strona zazwyczaj zawiera wiele funkcji i elementów, które ułatwiają użytkownikom robienie zakupów online i umożliwiają właścicielom sklepu zarządzanie swoim biznesem online.",
-    price: "900 zł",
-    colorAccent: "primary",
-  },
-  {
-    title: "Zaawansowana",
-    body: "Zaawansowana strona internetowa to witryna, która wykracza poza standardowe funkcje i oferuje bardziej skomplikowane rozwiązania i interakcje z użytkownikami. Taka strona może być przydatna dla firm, które potrzebują zaawansowanej funkcjonalności, takiej jak personalizacja, interaktywne narzędzia lub integracje z innymi systemami.",
-    price: "1400 zł",
-    colorAccent: "secondary",
-  },
-  {
-    title: "Dashboard",
-    body: "Dashboard internetowy to strona lub aplikacja internetowa, która prezentuje zbiór kluczowych informacji, danych i wskaźników wizualnych w sposób uporządkowany i łatwy do zrozumienia. Celem takiego dashboardu jest umożliwienie użytkownikom szybkiego monitorowania stanu, analizy trendów i podejmowania informowanych decyzji na podstawie dostępnych danych.",
-    price: "1600 zł",
-    colorAccent: "secondary",
-  },
-  {
-    title: "Non-profit",
-    body: "Jeśli reprezentujesz organizację pozarządową, której działania skierowane są na zaspokajanie interesów o charakterze nieekonomicznym możemy nawiązać współpracę na specjalnych warunkach. Moja oferta jest elastyczna i dostosowana do indywidualnych potrzeb organizacji oraz łączy wszystkie trzy wymienione powyżej typy stron internetowych na zamówienie.",
-    price: "0 zł",
-    colorAccent: "secondary",
-  },
-];
+const locale = getLocale(Astro.url)
+const localedData = t(locale)
+
+const pricesEn: Array<PriceLevel> = [
+	{
+		title: 'One page',
+		body: 'One pages are often used for simple websites such as information, portfolio or promotional websites where there is no need to divide the content into multiple subpages. One-page sites can have interactive navigation, such as parallax scrolling, which creates a three-dimensional effect, or scrolling animations.',
+		price: '400 zł',
+		colorAccent: 'offset'
+	},
+	{
+		title: 'e-commerce',
+		body: 'An e-commerce website is a website that allows you to buy and sell products or services over the Internet. Such a website usually includes many features and elements that make it easier for users to shop online and enable store owners to manage their online business.',
+		price: '900 zł',
+		colorAccent: 'primary'
+	},
+	{
+		title: 'Advanced',
+		body: 'An advanced website is a website that goes beyond standard features and offers more complex solutions and user interactions. Such a website may be useful for companies that need advanced functionality such as personalization, interactive tools or integration with other systems.',
+		price: '1400 zł',
+		colorAccent: 'secondary'
+	},
+	{
+		title: 'Dashboard',
+		body: 'A web dashboard is a website or web application that presents a set of key information, data, and visual indicators in an organized and easy-to-understand manner. The purpose of such a dashboard is to enable users to quickly monitor status, analyze trends, and make informed decisions based on available data.',
+		price: '1600 zł',
+		colorAccent: 'secondary'
+	},
+	{
+		title: 'Non-profit',
+		body: 'If you represent a non-governmental organization whose activities are aimed at satisfying non-economic interests, we can establish cooperation on special terms. My offer is flexible and tailored to the individual needs of the organization and combines all three types of custom websites mentioned above.',
+		price: '0 zł',
+		colorAccent: 'secondary'
+	}
+]
+
+const pricesPl: Array<PriceLevel> = [
+	{
+		title: 'One page',
+		body: 'Strony one page są często stosowane w przypadku prostych stron internetowych, takich jak strony informacyjne, portfolio lub strony promocyjne, gdzie nie ma potrzeby podziału zawartości na wiele podstron. Strony typu one page mogą mieć interaktywną nawigację, taką jak przewijanie paralaksy, które tworzą efekt trójwymiarowy lub animacje przy przewijaniu.',
+		price: '400 zł',
+		colorAccent: 'offset'
+	},
+	{
+		title: 'e-commerce',
+		body: 'Strona internetowa typu e-commerce to witryna, która umożliwia kupowanie i sprzedawanie produktów lub usług za pośrednictwem internetu. Taka strona zazwyczaj zawiera wiele funkcji i elementów, które ułatwiają użytkownikom robienie zakupów online i umożliwiają właścicielom sklepu zarządzanie swoim biznesem online.',
+		price: '900 zł',
+		colorAccent: 'primary'
+	},
+	{
+		title: 'Zaawansowana',
+		body: 'Zaawansowana strona internetowa to witryna, która wykracza poza standardowe funkcje i oferuje bardziej skomplikowane rozwiązania i interakcje z użytkownikami. Taka strona może być przydatna dla firm, które potrzebują zaawansowanej funkcjonalności, takiej jak personalizacja, interaktywne narzędzia lub integracje z innymi systemami.',
+		price: '1400 zł',
+		colorAccent: 'secondary'
+	},
+	{
+		title: 'Dashboard',
+		body: 'Dashboard internetowy to strona lub aplikacja internetowa, która prezentuje zbiór kluczowych informacji, danych i wskaźników wizualnych w sposób uporządkowany i łatwy do zrozumienia. Celem takiego dashboardu jest umożliwienie użytkownikom szybkiego monitorowania stanu, analizy trendów i podejmowania informowanych decyzji na podstawie dostępnych danych.',
+		price: '1600 zł',
+		colorAccent: 'secondary'
+	},
+	{
+		title: 'Non-profit',
+		body: 'Jeśli reprezentujesz organizację pozarządową, której działania skierowane są na zaspokajanie interesów o charakterze nieekonomicznym możemy nawiązać współpracę na specjalnych warunkach. Moja oferta jest elastyczna i dostosowana do indywidualnych potrzeb organizacji oraz łączy wszystkie trzy wymienione powyżej typy stron internetowych na zamówienie.',
+		price: '0 zł',
+		colorAccent: 'secondary'
+	}
+]
+
+const prices = locale === 'en' ? pricesEn : pricesPl
 ---
 
-<ContentSection title="Cennik" id="cennik">
-  <Fragment slot="lead">
-    Ostateczna <span class="text-primary">cena</span> za stronę internetową jest
-    zawsze <span class="text-primary">ustalana indywidualnie</span>. Konsultacja
-    i <span class="text-primary">wycena</span> jest zawsze <span
-      class="text-primary">darmowa</span
-    >. W zaleności od typu strony można mówić o pewnych orientacyjnych cenach.
-  </Fragment>
-  <div
-    class="price-list__container flex max-w-6xl flex-wrap items-start justify-center gap-4"
-  >
-    {
-      prices.map(({ title, body, price }) => (
-        <details class="border border-default bg-offset focus:bg-white">
-          <summary class="flex cursor-pointer flex-col items-center gap-4 px-6 pb-6 pt-8 text-center">
-            <h3 class="font-extrabold uppercase text-xl">{title}</h3>
-            <span class="text-offset text-sm">{body}</span>
-            <span
-              class="cta-show-price flex items-center justify-center gap-3 border-2 border-current px-6 py-4 text-center hover:text-secondary"
-              data-open="Kliknij, aby poznać cenę"
-              data-close="Kliknij, aby ukryć cenę"
-            />
-          </summary>
-          <div class="content">
-            <div class="flex flex-col items-center justify-center border-t border-default px-6 py-4">
-              <p class="text-offset text-sm">od</p>
+<ContentSection title={localedData.home.priceList} id="cennik">
+	<Fragment set:html={localedData.home.priceListSubtitle} slot="lead" />
+	<div class="price-list__container flex max-w-6xl flex-wrap items-start justify-center gap-4">
+		{
+			prices.map(({ title, body, price }) => (
+				<details class="border border-default bg-offset focus:bg-white">
+					<summary class="flex cursor-pointer flex-col items-center gap-4 px-6 pb-6 pt-8 text-center">
+						<h3 class="font-extrabold uppercase text-xl">{title}</h3>
+						<span class="text-offset text-sm">{body}</span>
+						<span
+							class="cta-show-price flex items-center justify-center gap-3 border-2 border-current px-6 py-4 text-center hover:text-secondary"
+							data-open={localedData.home.priceListOpen}
+							data-close={localedData.home.priceListClose}
+						/>
+					</summary>
+					<div class="content">
+						<div class="flex flex-col items-center justify-center border-t border-default px-6 py-4">
+							<p class="text-offset text-sm">od</p>
 
-              <div class="price">
-                <p class="pricingtable">{price}</p>
-              </div>
-            </div>
-          </div>
-        </details>
-      ))
-    }
-  </div>
+							<div class="price">
+								<p class="pricingtable">{price}</p>
+							</div>
+						</div>
+					</div>
+				</details>
+			))
+		}
+	</div>
 </ContentSection>
 
 <style>
-  details {
-    -webkit-tap-highlight-color: transparent;
-  }
-  details summary::-webkit-details-marker {
-    @apply hidden;
-  }
-  details .cta-show-price::after {
-    content: attr(data-open);
-  }
-  details[open] .cta-show-price::after {
-    content: attr(data-close);
-  }
-  .price-list__container > * {
-    flex: 1;
-    min-width: 300px;
-  }
+	details {
+		-webkit-tap-highlight-color: transparent;
+	}
+	details summary::-webkit-details-marker {
+		@apply hidden;
+	}
+	details .cta-show-price::after {
+		content: attr(data-open);
+	}
+	details[open] .cta-show-price::after {
+		content: attr(data-close);
+	}
+	.price-list__container > * {
+		flex: 1;
+		min-width: 300px;
+	}
 
-  .price {
-    @apply relative flex h-16 justify-center md:h-20;
-  }
+	.price {
+		@apply relative flex h-16 justify-center md:h-20;
+	}
 
-  .price p {
-    @apply z-10 mx-4 mb-0 mt-2 font-extrabold text-4xl;
-  }
+	.price p {
+		@apply z-10 mx-4 mb-0 mt-2 font-extrabold text-4xl;
+	}
 </style>
 
 <script>
-  interface Accordion {
-    el: any;
-    summary: HTMLElement | null;
-    content: HTMLElement | null;
-    animation: any;
-    isClosing: boolean;
-    isExpanding: boolean;
-  }
+	interface Accordion {
+		el: any
+		summary: HTMLElement | null
+		content: HTMLElement | null
+		animation: any
+		isClosing: boolean
+		isExpanding: boolean
+	}
 
-  class Accordion {
-    constructor(el: any) {
-      // Store the <details> element
-      this.el = el;
-      // Store the <summary> element
-      this.summary = el.querySelector("summary");
-      // Store the <div class="content"> element
-      this.content = el.querySelector(".content");
+	class Accordion {
+		constructor(el: any) {
+			// Store the <details> element
+			this.el = el
+			// Store the <summary> element
+			this.summary = el.querySelector('summary')
+			// Store the <div class="content"> element
+			this.content = el.querySelector('.content')
 
-      // Store the animation object (so we can cancel it if needed)
-      this.animation = null;
-      // Store if the element is closing
-      this.isClosing = false;
-      // Store if the element is expanding
-      this.isExpanding = false;
-      // Detect user clicks on the summary element
-      this.summary?.addEventListener("click", (e) => this.onClick(e));
-    }
+			// Store the animation object (so we can cancel it if needed)
+			this.animation = null
+			// Store if the element is closing
+			this.isClosing = false
+			// Store if the element is expanding
+			this.isExpanding = false
+			// Detect user clicks on the summary element
+			this.summary?.addEventListener('click', (e) => this.onClick(e))
+		}
 
-    onClick(e: any) {
-      // Stop default behaviour from the browser
-      e.preventDefault();
-      // Add an overflow on the <details> to avoid content overflowing
-      this.el.style.overflow = "hidden";
-      // Check if the element is being closed or is already closed
-      if (this.isClosing || !this.el.open) {
-        this.open();
-        // Check if the element is being openned or is already open
-      } else if (this.isExpanding || this.el.open) {
-        this.shrink();
-      }
-    }
+		onClick(e: any) {
+			// Stop default behaviour from the browser
+			e.preventDefault()
+			// Add an overflow on the <details> to avoid content overflowing
+			this.el.style.overflow = 'hidden'
+			// Check if the element is being closed or is already closed
+			if (this.isClosing || !this.el.open) {
+				this.open()
+				// Check if the element is being openned or is already open
+			} else if (this.isExpanding || this.el.open) {
+				this.shrink()
+			}
+		}
 
-    shrink() {
-      // Set the element as "being closed"
-      this.isClosing = true;
+		shrink() {
+			// Set the element as "being closed"
+			this.isClosing = true
 
-      // Store the current height of the element
-      const startHeight = `${this.el.offsetHeight}px`;
-      // Calculate the height of the summary
-      const endHeight = `${this.summary!.offsetHeight}px`;
+			// Store the current height of the element
+			const startHeight = `${this.el.offsetHeight}px`
+			// Calculate the height of the summary
+			const endHeight = `${this.summary!.offsetHeight}px`
 
-      // If there is already an animation running
-      if (this.animation) {
-        // Cancel the current animation
-        this.animation.cancel();
-      }
+			// If there is already an animation running
+			if (this.animation) {
+				// Cancel the current animation
+				this.animation.cancel()
+			}
 
-      // Start a WAAPI animation
-      this.animation = this.el.animate(
-        {
-          // Set the keyframes from the startHeight to endHeight
-          height: [startHeight, endHeight],
-        },
-        {
-          duration: 400,
-          easing: "ease-out",
-        }
-      );
+			// Start a WAAPI animation
+			this.animation = this.el.animate(
+				{
+					// Set the keyframes from the startHeight to endHeight
+					height: [startHeight, endHeight]
+				},
+				{
+					duration: 400,
+					easing: 'ease-out'
+				}
+			)
 
-      // When the animation is complete, call onAnimationFinish()
-      this.animation.onfinish = () => this.onAnimationFinish(false);
-      // If the animation is cancelled, isClosing variable is set to false
-      this.animation.oncancel = () => (this.isClosing = false);
-    }
+			// When the animation is complete, call onAnimationFinish()
+			this.animation.onfinish = () => this.onAnimationFinish(false)
+			// If the animation is cancelled, isClosing variable is set to false
+			this.animation.oncancel = () => (this.isClosing = false)
+		}
 
-    open() {
-      // Apply a fixed height on the element
-      this.el.style.height = `${this.el.offsetHeight}px`;
-      // Force the [open] attribute on the details element
-      this.el.open = true;
-      // Wait for the next frame to call the expand function
-      window.requestAnimationFrame(() => this.expand());
-    }
+		open() {
+			// Apply a fixed height on the element
+			this.el.style.height = `${this.el.offsetHeight}px`
+			// Force the [open] attribute on the details element
+			this.el.open = true
+			// Wait for the next frame to call the expand function
+			window.requestAnimationFrame(() => this.expand())
+		}
 
-    expand() {
-      // Set the element as "being expanding"
-      this.isExpanding = true;
-      // Get the current fixed height of the element
-      const startHeight = `${this.el.offsetHeight}px`;
-      // Calculate the open height of the element (summary height + content height)
-      const endHeight = `${
-        this.summary!.offsetHeight + this.content!.offsetHeight
-      }px`;
+		expand() {
+			// Set the element as "being expanding"
+			this.isExpanding = true
+			// Get the current fixed height of the element
+			const startHeight = `${this.el.offsetHeight}px`
+			// Calculate the open height of the element (summary height + content height)
+			const endHeight = `${this.summary!.offsetHeight + this.content!.offsetHeight}px`
 
-      // If there is already an animation running
-      if (this.animation) {
-        // Cancel the current animation
-        this.animation.cancel();
-      }
+			// If there is already an animation running
+			if (this.animation) {
+				// Cancel the current animation
+				this.animation.cancel()
+			}
 
-      // Start a WAAPI animation
-      this.animation = this.el.animate(
-        {
-          // Set the keyframes from the startHeight to endHeight
-          height: [startHeight, endHeight],
-        },
-        {
-          duration: 400,
-          easing: "ease-out",
-        }
-      );
-      // When the animation is complete, call onAnimationFinish()
-      this.animation.onfinish = () => this.onAnimationFinish(true);
-      // If the animation is cancelled, isExpanding variable is set to false
-      this.animation.oncancel = () => (this.isExpanding = false);
-    }
+			// Start a WAAPI animation
+			this.animation = this.el.animate(
+				{
+					// Set the keyframes from the startHeight to endHeight
+					height: [startHeight, endHeight]
+				},
+				{
+					duration: 400,
+					easing: 'ease-out'
+				}
+			)
+			// When the animation is complete, call onAnimationFinish()
+			this.animation.onfinish = () => this.onAnimationFinish(true)
+			// If the animation is cancelled, isExpanding variable is set to false
+			this.animation.oncancel = () => (this.isExpanding = false)
+		}
 
-    onAnimationFinish(open: boolean) {
-      // Set the open attribute based on the parameter
-      this.el.open = open;
-      // Clear the stored animation
-      this.animation = null;
-      // Reset isClosing & isExpanding
-      this.isClosing = false;
-      this.isExpanding = false;
-      // Remove the overflow hidden and the fixed height
-      this.el.style.height = this.el.style.overflow = "";
-    }
-  }
+		onAnimationFinish(open: boolean) {
+			// Set the open attribute based on the parameter
+			this.el.open = open
+			// Clear the stored animation
+			this.animation = null
+			// Reset isClosing & isExpanding
+			this.isClosing = false
+			this.isExpanding = false
+			// Remove the overflow hidden and the fixed height
+			this.el.style.height = this.el.style.overflow = ''
+		}
+	}
 
-  document.querySelectorAll("details").forEach((el) => {
-    new Accordion(el);
-  });
+	document.querySelectorAll('details').forEach((el) => {
+		new Accordion(el)
+	})
 </script>

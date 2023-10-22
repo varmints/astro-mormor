@@ -1,0 +1,73 @@
+{
+	"slogan": {
+		"a": "Professionalism",
+		"b": "Transparency",
+		"c": "Innovation"
+	},
+	"splash": {
+		"status": "Status",
+		"message": "I'm currently drifting between work and family, but I'm available for your project. <a href='/#kontakt' class='font-accent font-extrabold text-primary'>Leave a message!</a>"
+	},
+	"hello": "Hello! 👋",
+	"intro": {
+		"content": "I create <span class='text-primary'>websites</span> that are functional, efficient and a great representation of a person or company in <span class='text-primary'>the digital universe.</span>",
+		"btnBlog": "Discover blog",
+		"btnManifesto": "Read manifesto"
+	},
+	"advantages": "Advantages",
+	"advantagesSubtitle": "I use the best parts of <span class='text-primary'>cutting-edge</span> tools and add my own <span class='text-primary'>innovations</span>.",
+	"advantagesDetails": [
+		{
+			"title": "Process",
+			"description": "I prefer a working method called Rapid Applications Development. It works best for designs that can be improved indefinitely.",
+			"icon": "mdi:handshake"
+		},
+		{
+			"title": "Speed ​​and efficiency",
+			"description": "I always focus on user experience, which will only be positive if the websites run quickly on every device.",
+			"icon": "mdi:feather"
+		},
+		{
+			"title": "Integrations",
+			"description": "CMS, chatbots, payment systems, review sites and much more can be added to your website in a short time.",
+			"icon": "mdi:graph"
+		},
+		{
+			"title": "E-commerce",
+			"description": "Do you want to turn your website into an online store? These days, it's clear as day to me.",
+			"icon": "mdi:basket-outline"
+		},
+		{
+			"title": "SEO positioning",
+			"description": "Automatic sitemaps, RSS feeds, HTTPS and all other SEO problems solved from the first version of the project.",
+			"icon": "mdi:web"
+		},
+		{
+			"title": "Flexibility",
+			"description": "Have you changed your mind about functionality while working on the project? It's okay, I understand it well. We are explorers!",
+			"icon": "mdi:directions-fork"
+		}
+	],
+	"technologies": "Modern technologies",
+	"technologiesSubtitle": "I use <span class='text-primary'>frameworks</span> that best suit <span class='text-primary'>your project</span>. Then I implement the project on reliable <span class='text-primary'>platforms</span>.",
+	"andMore": " ...and more",
+	"about": "About the Company",
+	"frameworks": "Frameworks",
+	"platforms": "Platforms",
+	"examples": "Examples",
+	"examplesSubtitle": "I am <span class='text-primary'>versatile</span>. Check out what I've prepared so far and get inspired.",
+	"examplesSeeMore": "See more on Github",
+	"priceList": "Price list",
+	"priceListSubtitle": "The final <span class='text-primary'>price</span> for the website is always agreed individually. Consultation and quote are always free. Depending on the type of website, there are certain approximate prices.",
+	"priceListOpen": "Click to see price",
+	"priceListClose": "Click to hide price",
+	"contact": "Contact",
+	"contactLead": "If you just want to say <span class='text-primary'>hello and chat</span> about a few ideas, I'd love to connect.",
+	"afterHours": "After hours",
+	"afterHoursLead": "In my free time <span class='text-primary'>I take photos</span> and I want to share my passion. That's why it would be nice if you would like to follow my profile on Instagram.",
+	"afterHoursSeeMore": "See more at @foto.tfurca",
+	"relay": "Relay Love",
+	"relayLead": "Help people safely access the internet using <a class='text-primary' rel='me noopener noreferrer' target='_blank' href='https://snowflake.torproject.org/'>Snowflake</a>. To share your connection, enable the toggle and keep this tab open. Avoid sharing from censored locations.",
+	"projects": "Projects",
+	"services": "Services"
+}

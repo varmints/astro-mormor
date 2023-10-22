@@ -1,19 +1,21 @@
 ---
+import { getLocale } from 'astro-i18n-aut'
 import { getCollection } from 'astro:content'
 import ContentSection from '~/components/ContentSection.astro'
 import ShowcaseCard from '~/components/ShowcaseCard.astro'
 import { siteInfo } from '~/config'
+import { t, localedURL } from '../utils/i18n.ts'
+
+const locale = getLocale(Astro.url)
+const localedData = t(locale)
 
 const featuredSites = await getCollection('showcase', ({ data }) => 'featured' in data)
 const orderedSites = featuredSites.sort((a, b) => a.data.featured! - b.data.featured!)
 const [githubLink] = siteInfo.socialLinks.filter((item) => item.platform === 'github')
 ---
 
-<ContentSection title="Przykłady" id="przyklady">
-	<Fragment slot="lead">
-		Jestem <span class="text-primary">wszechstronny</span>. Sprawdź, co przygotowałem do tej pory i
-		zainspiruj się.
-	</Fragment>
+<ContentSection title={localedData.home.examples} id="przyklady">
+	<Fragment set:html={localedData.home.examplesSubtitle} slot="lead" />
 	<div class="max-w-6xl space-y-2">
 		<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
 			{orderedSites.map((site) => <ShowcaseCard site={site} />)}
@@ -29,6 +31,6 @@ const [githubLink] = siteInfo.socialLinks.filter((item) => item.platform === 'gi
 		class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4 text-center hover:text-secondary focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-transparent"
 		target="_blank"
 	>
-		Zobacz więcej na Github
+		{localedData.home.examplesSeeMore}
 	</a>
 </ContentSection>
