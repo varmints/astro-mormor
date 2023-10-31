@@ -4,6 +4,9 @@ import { getLocale } from 'astro-i18n-aut'
 const locale = getLocale(Astro.url)
 ---
 
-<a class="font-extrabold text-sm" href={locale === 'pl' ? '/en' : '/'}>
+<a
+	class="block py-4 font-extrabold text-xl sm:py-0 sm:text-center sm:text-sm"
+	href={locale === 'pl' ? '/en' : '/'}
+>
 	{locale === 'pl' ? 'EN' : 'PL'}
 </a>
