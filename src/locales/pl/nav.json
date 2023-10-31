@@ -1,6 +1,6 @@
 {
 	"navItems": [
-		{ "title": "Blog", "url": "/blog" },
+		{ "title": "Manifest", "url": "/manifest" },
 		{ "title": "Zalety", "url": "/#zalety" },
 		{ "title": "Przykłady", "url": "/#przyklady" },
 		{ "title": "Cennik", "url": "/#cennik" },
