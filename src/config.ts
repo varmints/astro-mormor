@@ -1,7 +1,7 @@
 import type { Site, SocialObjects, SiteInfo } from './types'
 
 export const siteInfo: SiteInfo = {
-	name: 'mormor',
+	name: 'mormor.dev',
 	title: 'Strona internetowa, którą chcesz',
 	description:
 		'Tworzę strony internetowe, które są funkcjonalne, wydajne i stanowią doskonałą reprezentację osoby lub firmy w cyfrowym wszechświecie. Build fast websites, faster with me. mormor is here.',

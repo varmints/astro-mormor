@@ -1,26 +1,21 @@
 ---
 export interface Props {
-  id: string;
-  title: string;
+	id: string
+	title: string
 }
 
-const { title, id } = Astro.props;
+const { title, id } = Astro.props
 ---
 
-<section
-  id={id}
-  class="flex flex-col items-center gap-4 space-y-8 scroll-mt-24"
->
-  <div class="flex flex-col items-center gap-4">
-    <slot name="eyebrow" />
-    <h2
-      class="text-6xl font-extrabold tracking-tight text-center gradient-text leading-tight"
-    >
-      {title}
-    </h2>
-  </div>
-  <p class="max-w-xl text-2xl font-extrabold text-center">
-    <slot name="lead" />
-  </p>
-  <slot />
+<section id={id} class="flex scroll-mt-24 flex-col items-center gap-3 space-y-8">
+	<div class="flex flex-col items-center gap-4">
+		<slot name="eyebrow" />
+		<h2 class="gradient-text text-center font-extrabold leading-tight tracking-tight text-6xl">
+			{title}
+		</h2>
+	</div>
+	<p class="max-w-xl text-center font-extrabold text-2xl">
+		<slot name="lead" />
+	</p>
+	<slot />
 </section>

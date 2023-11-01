@@ -1,93 +1,96 @@
 ---
+import { getLocale } from 'astro-i18n-aut'
+import { t } from '../utils/i18n.ts'
+
+const locale = getLocale(Astro.url)
+const localedData = t(locale)
 ---
 
 <div>
-  Kodowanie to <span class="typed-text" data-text="praca,zabawa,podróż,ŻYCIE"></span><span class="cursor">&nbsp;</span>
+	{localedData.home.splash.codingIs}{' '}
+	<span class="typed-text" data-text={localedData.home.splash.typedText}></span><span class="cursor"
+		>&nbsp;</span
+	>
 </div>
 
 <style>
-  div {
-    @apply text-gray-50 p-6 font-bold text-2xl sm:text-4xl;
-    letter-spacing: 0.1rem;
-    text-align: center;
-    overflow: hidden;
-  }
-  div span.typed-text {
-    @apply font-normal text-primary;
-  }
-  div span.cursor {
-    display: inline-block;
-    background-color: var(--color-primary);
-    margin-left: 0.1rem;
-    width: 3px;
-    animation: blink 1s infinite;
-  }
-  div span.cursor.typing {
-    animation: none;
-  }
-  @keyframes blink {
-    0% {
-      background-color: var(--color-primary);
-    }
-    49% {
-      background-color: var(--color-primary);
-    }
-    50% {
-      background-color: transparent;
-    }
-    99% {
-      background-color: transparent;
-    }
-    100% {
-      background-color: var(--color-primary);
-    }
-  }
+	div {
+		@apply p-6 font-bold text-gray-50 text-2xl sm:text-4xl;
+		letter-spacing: 0.1rem;
+		text-align: center;
+		overflow: hidden;
+	}
+	div span.typed-text {
+		@apply font-normal text-primary;
+	}
+	div span.cursor {
+		display: inline-block;
+		background-color: var(--color-primary);
+		margin-left: 0.1rem;
+		width: 3px;
+		animation: blink 1s infinite;
+	}
+	div span.cursor.typing {
+		animation: none;
+	}
+	@keyframes blink {
+		0% {
+			background-color: var(--color-primary);
+		}
+		49% {
+			background-color: var(--color-primary);
+		}
+		50% {
+			background-color: transparent;
+		}
+		99% {
+			background-color: transparent;
+		}
+		100% {
+			background-color: var(--color-primary);
+		}
+	}
 </style>
 
 <script>
-  const typedTextSpan = document.querySelector<HTMLElement>(".typed-text");
-  const cursorSpan = document.querySelector<HTMLElement>(".cursor");
+	const typedTextSpan = document.querySelector<HTMLElement>('.typed-text')
+	const cursorSpan = document.querySelector<HTMLElement>('.cursor')
 
-  const textArray = typedTextSpan!.dataset?.text!.split(",");
-  const typingDelay = 200;
-  const erasingDelay = 100;
-  const newTextDelay = 2000; // Delay between current and next text
-  let textArrayIndex = 0;
-  let charIndex = 0;
+	const textArray = typedTextSpan!.dataset?.text!.split(',')
+	const typingDelay = 200
+	const erasingDelay = 100
+	const newTextDelay = 2000 // Delay between current and next text
+	let textArrayIndex = 0
+	let charIndex = 0
 
-  function type() {
-    if (charIndex < textArray[textArrayIndex].length) {
-      if (!cursorSpan?.classList.contains("typing"))
-        cursorSpan?.classList.add("typing");
-      typedTextSpan!.textContent += textArray[textArrayIndex].charAt(charIndex);
-      charIndex++;
-      setTimeout(type, typingDelay);
-    } else {
-      cursorSpan?.classList.remove("typing");
-      setTimeout(erase, newTextDelay);
-    }
-  }
+	function type() {
+		if (charIndex < textArray[textArrayIndex].length) {
+			if (!cursorSpan?.classList.contains('typing')) cursorSpan?.classList.add('typing')
+			typedTextSpan!.textContent += textArray[textArrayIndex].charAt(charIndex)
+			charIndex++
+			setTimeout(type, typingDelay)
+		} else {
+			cursorSpan?.classList.remove('typing')
+			setTimeout(erase, newTextDelay)
+		}
+	}
 
-  function erase() {
-    if (charIndex > 0) {
-      if (!cursorSpan?.classList.contains("typing"))
-        cursorSpan?.classList.add("typing");
-      typedTextSpan!.textContent = textArray[textArrayIndex].substring(
-        0,
-        charIndex - 1
-      );
-      charIndex--;
-      setTimeout(erase, erasingDelay);
-    } else {
-      cursorSpan?.classList.remove("typing");
-      textArrayIndex++;
-      if (textArrayIndex >= textArray.length) textArrayIndex = 0;
-      setTimeout(type, typingDelay + 1100);
-    }
-  }
+	function erase() {
+		if (charIndex > 0) {
+			if (!cursorSpan?.classList.contains('typing')) cursorSpan?.classList.add('typing')
+			typedTextSpan!.textContent = textArray[textArrayIndex].substring(0, charIndex - 1)
+			charIndex--
+			setTimeout(erase, erasingDelay)
+		} else {
+			cursorSpan?.classList.remove('typing')
+			textArrayIndex++
+			if (textArrayIndex >= textArray.length) textArrayIndex = 0
+			setTimeout(type, typingDelay + 1100)
+		}
+	}
 
-  document.addEventListener("DOMContentLoaded", function () {
-    // On DOM Load initiate the effect
-    if (textArray.length) setTimeout(type, newTextDelay + 250);
-  });
+	document.addEventListener('DOMContentLoaded', function () {
+		// On DOM Load initiate the effect
+		if (textArray.length) setTimeout(type, newTextDelay + 250)
+	})
 </script>

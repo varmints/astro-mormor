@@ -6,7 +6,9 @@
 	},
 	"splash": {
 		"status": "Status",
-		"message": "I'm currently drifting between work and family, but I'm available for your project. <a href='/#kontakt' class='font-accent font-extrabold text-primary'>Leave a message!</a>"
+		"message": "I'm currently drifting between work and family, but I'm available for your project. <a href='/#kontakt' class='font-accent font-extrabold text-primary'>Leave a message!</a>",
+		"codingIs": "Coding is",
+		"typedText": "work,fun,journey,LIFE"
 	},
 	"hello": "Hello! 👋",
 	"intro": {
@@ -67,7 +69,5 @@
 	"afterHoursLead": "In my free time <span class='text-primary'>I take photos</span> and I want to share my passion. That's why it would be nice if you would like to follow my profile on Instagram.",
 	"afterHoursSeeMore": "See more at @foto.tfurca",
 	"relay": "Relay Love",
-	"relayLead": "Help people safely access the internet using <a class='text-primary' rel='me noopener noreferrer' target='_blank' href='https://snowflake.torproject.org/'>Snowflake</a>. To share your connection, enable the toggle and keep this tab open. Avoid sharing from censored locations.",
-	"projects": "Projects",
-	"services": "Services"
+	"relayLead": "Help people safely access the internet using <a class='text-primary' rel='me noopener noreferrer' target='_blank' href='https://snowflake.torproject.org/'>Snowflake</a>. To share your connection, enable the toggle and keep this tab open. Avoid sharing from censored locations."
 }

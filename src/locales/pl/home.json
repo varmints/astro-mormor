@@ -6,7 +6,9 @@
 	},
 	"splash": {
 		"status": "Status",
-		"message": "Obecnie dryfuję między pracą a rodziną, ale jestem dostępny dla Twojego projektu. <a href='/#kontakt' class='font-accent font-extrabold text-primary'>Zostaw wiadomość!</a>"
+		"message": "Obecnie dryfuję między pracą a rodziną, ale jestem dostępny dla Twojego projektu. <a href='/#kontakt' class='font-accent font-extrabold text-primary'>Zostaw wiadomość!</a>",
+		"codingIs": "Kodowanie to",
+		"typedText": "praca,zabawa,podróż,ŻYCIE"
 	},
 	"hello": "Cześć! 👋",
 	"intro": {
@@ -66,8 +68,5 @@
 	"afterHoursLead": "W wolnym czasie <span class='text-primary'>fotografuję</span> i chcę się dzielić moją pasją. Dlatego byłoby miło gdybyś zechciał śledził mój profil na Instagramie.",
 	"afterHoursSeeMore": "Zobacz więcej na @foto.tfurca",
 	"relay": "Relay",
-	"relayLead": "Pomóż ludziom bezpiecznie uzyskać dostęp do Internetu, korzystając z <a class='text-primary' rel='me noopener noreferrer' target='_blank' href='https://snowflake.torproject.org/'>Snowflake</a>. Aby udostępnić połączenie, włącz przełącznik i pozostaw tę kartę otwartą. Unikaj udostępniania z cenzurowanych miejsc.",
-	"about": "O mnie",
-	"projects": "Projects",
-	"services": "Services"
+	"relayLead": "Pomóż ludziom bezpiecznie uzyskać dostęp do Internetu, korzystając z <a class='text-primary' rel='me noopener noreferrer' target='_blank' href='https://snowflake.torproject.org/'>Snowflake</a>. Aby udostępnić połączenie, włącz przełącznik i pozostaw tę kartę otwartą. Unikaj udostępniania z cenzurowanych miejsc."
 }

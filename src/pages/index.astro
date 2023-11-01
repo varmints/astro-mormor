@@ -28,13 +28,13 @@ const localedData = t(locale)
 	const langNotification = document.getElementById('lang-notification')
 	if (
 		!localStorage.getItem('langModalInteraction') &&
-		window.navigator.language !== 'uk' &&
-		window.navigator.language !== 'uk-UA'
+		window.navigator.language !== 'pl' &&
+		window.navigator.language !== 'pl-PL'
 	) {
 		langNotification?.style.setProperty('display', 'block')
 	}
 
-	const langUKButton = document.getElementById('lang-uk')
+	const langPLButton = document.getElementById('lang-pl')
 	const langENButton = document.getElementById('lang-en')
 
 	langENButton?.addEventListener('click', () => {
@@ -43,7 +43,7 @@ const localedData = t(locale)
 		window.location.href = '/en'
 	})
 
-	langUKButton?.addEventListener('click', () => {
+	langPLButton?.addEventListener('click', () => {
 		localStorage.setItem('langModalInteraction', 'true')
 		langNotification?.style.setProperty('display', 'none')
 	})
