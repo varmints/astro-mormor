@@ -1,6 +1,6 @@
 {
 	"navItems": [
-		{ "title": "Manifesto", "url": "/manifest" },
+		{ "title": "Blog", "url": "https://blog.mormor.dev" },
 		{ "title": "Advantages", "url": "/#advantages" },
 		{ "title": "Examples", "url": "/#examples" },
 		{ "title": "Price list", "url": "/#price-list" },
