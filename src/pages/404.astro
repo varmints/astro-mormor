@@ -1,76 +1,76 @@
 ---
-import { SITE } from "~/config";
-import BlogLayout from "~/layouts/BlogLayout.astro";
-import Footer from "~/components/blog/Footer.astro";
+import { SITE } from '~/config'
+import BlogLayout from '~/layouts/BlogLayout.astro'
+import Footer from '~/components/blog/Footer.astro'
 ---
 
 <BlogLayout title={`404 Not Found | ${SITE.title}`} themeToggle={false}>
-  <main id="main-content">
-    <a href="/">
-      <div class="not-found-wrapper">
-        <div class="my-28 blur" title="black hole">
-          <b></b>
-        </div>
-      </div>
-    </a>
-  </main>
-
-  <Footer />
+	<main id="main-content">
+		<a href="/">
+			<div class="not-found-wrapper">
+				<div class="my-28 blur" title="black hole">
+					<b></b>
+				</div>
+			</div>
+		</a>
+	</main>
 </BlogLayout>
 
 <style>
-  #main-content {
-    @apply mx-auto flex max-w-3xl flex-1 items-center justify-center;
-  }
-  .not-found-wrapper {
-    @apply mb-14 flex flex-col items-center justify-center;
-  }
-  body {
-    @apply !bg-black;
-  }
-  b,
-  b:before,
-  b:after {
-    display: block;
-    border-radius: 50%;
-  }
-  b {
-    width: 50vmin;
-    height: 51vmin;
-    box-shadow: 1vmin 0 3vmin 2vmin var(--black-hole),
-      inset -1vmin 0 3vmin 4vmin var(--black-hole-brighter),
-      -4vmin 0 35vmin 0 var(--black-hole);
-    animation: bh 42s linear infinite;
-  }
-  @keyframes bh {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(-360deg);
-    }
-  }
-  b:before,
-  b:after {
-    content: "";
-    background: var(--black-hole-white);
-    position: relative;
-    top: 6vmin;
-  }
-  b:before {
-    width: 3vmin;
-    height: 3vmin;
-    left: 40vmin;
-    box-shadow: var(--black-hole-accent) 0 0 2vmin 2vmin,
-      var(--black-hole-accent) 2vmin 4vmin 2vmin 0.5vmin;
-  }
-  b:after {
-    width: 38vmin;
-    height: 38vmin;
-    opacity: 0.03;
-    left: -14vmin;
-  }
-  .blur {
-    filter: blur(8px);
-  }
+	#main-content {
+		@apply mx-auto flex max-w-3xl flex-1 items-center justify-center;
+	}
+	.not-found-wrapper {
+		@apply mb-14 flex flex-col items-center justify-center;
+	}
+	body {
+		@apply !bg-black;
+	}
+	b,
+	b:before,
+	b:after {
+		display: block;
+		border-radius: 50%;
+	}
+	b {
+		width: 50vmin;
+		height: 51vmin;
+		box-shadow:
+			1vmin 0 3vmin 2vmin var(--black-hole),
+			inset -1vmin 0 3vmin 4vmin var(--black-hole-brighter),
+			-4vmin 0 35vmin 0 var(--black-hole);
+		animation: bh 42s linear infinite;
+	}
+	@keyframes bh {
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(-360deg);
+		}
+	}
+	b:before,
+	b:after {
+		content: '';
+		background: var(--black-hole-white);
+		position: relative;
+		top: 6vmin;
+	}
+	b:before {
+		width: 3vmin;
+		height: 3vmin;
+		left: 40vmin;
+		box-shadow:
+			var(--black-hole-accent) 0 0 2vmin 2vmin,
+			var(--black-hole-accent) 2vmin 4vmin 2vmin 0.5vmin;
+	}
+	b:after {
+		width: 38vmin;
+		height: 38vmin;
+		opacity: 0.03;
+		left: -14vmin;
+	}
+	.blur {
+		filter: blur(8px);
+	}
 </style>
