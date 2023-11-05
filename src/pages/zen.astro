@@ -1,0 +1,24 @@
+---
+import BaseHead, { type Props as HeadProps } from '~/components/BaseHead.astro'
+import { getLocale } from 'astro-i18n-aut'
+import { t, localedURL } from '~/utils/i18n.ts'
+import '~/styles/index.css'
+
+export type Props = HeadProps
+
+const { ...head } = Astro.props
+
+const locale = getLocale(Astro.url)
+const localedData = t(locale)
+---
+
+<html lang={locale} class="h-full motion-safe:scroll-smooth" data-theme="dark">
+	<head>
+		<BaseHead {...head} title="Strony internetowe skrojone na miarę" />
+	</head>
+	<body
+		class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
+	>
+		<canvas id="paper"></canvas>
+	</body>
+</html>
