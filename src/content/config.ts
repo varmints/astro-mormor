@@ -10,7 +10,7 @@ const showcase = defineCollection({
 	schema: z.object({
 		title: z.string().min(1),
 		image: z.string(),
-		url: z.string().url(),
+		url: z.string(),
 		featured: z.number().min(1).optional()
 	})
 })

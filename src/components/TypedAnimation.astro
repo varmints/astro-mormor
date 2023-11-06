@@ -7,15 +7,15 @@ const localedData = t(locale)
 ---
 
 <div>
-	{localedData.home.splash.codingIs}{' '}
+	<div>{localedData.home.splash.codingIs}</div>
 	<span class="typed-text" data-text={localedData.home.splash.typedText}></span><span class="cursor"
 		>&nbsp;</span
 	>
 </div>
 
-<style>
+<style scoped>
 	div {
-		@apply p-6 font-bold text-gray-50 text-2xl sm:text-4xl;
+		@apply p-6 font-bold text-gray-50 text-5xl;
 		letter-spacing: 0.1rem;
 		text-align: center;
 		overflow: hidden;

@@ -11,6 +11,9 @@ const { site } = Astro.props
 const image = await resolveImage(site)
 
 function getRootDomain(s: string): RegExpMatchArray | null {
+	if (s[0] === '/') {
+		s = Astro.site!.href
+	}
 	return s.replace(/http(s)?(:)?(\/\/)?|(\/\/)?(www\.)?/g, '').match(/^(?:\/\/|[^\/]+)*/g)
 }
 
