@@ -1,35 +1,35 @@
-html[data-theme="light"] {
-  --color-primary: theme("colors.pink.500");
-  --color-secondary: theme("colors.indigo.500");
-  --color-text: theme("colors.gray.900");
-  --color-text-offset: theme("colors.gray.600");
-  --color-background: theme("colors.gray.100");
-  --color-background-offset: theme("colors.gray.100");
-  --color-border: theme("colors.gray.900" / 10%);
-  --instagram-gradient: radial-gradient(
-    circle at 30% 107%,
-    #fdf497 0%,
-    #fdf497 5%,
-    #fd5949 45%,
-    #d6249f 60%,
-    #285aeb 90%
-  );
+html[data-theme='light'] {
+	--color-primary: theme('colors.pink.500');
+	--color-secondary: theme('colors.indigo.500');
+	--color-text: theme('colors.gray.900');
+	--color-text-offset: theme('colors.gray.600');
+	--color-background: theme('colors.gray.100');
+	--color-background-offset: theme('colors.gray.100');
+	--color-border: theme('colors.gray.300');
+	--instagram-gradient: radial-gradient(
+		circle at 30% 107%,
+		#fdf497 0%,
+		#fdf497 5%,
+		#fd5949 45%,
+		#d6249f 60%,
+		#285aeb 90%
+	);
 }
 
-html[data-theme="dark"] {
-  --color-primary: theme("colors.pink.400");
-  --color-secondary: theme("colors.indigo.400");
-  --color-text: theme("colors.gray.50");
-  --color-text-offset: theme("colors.gray.400");
-  --color-background: theme("colors.gray.900");
-  --color-background-offset: theme("colors.gray.800");
-  --color-border: theme("colors.gray.50" / 10%);
-  --instagram-gradient: radial-gradient(
-    circle at 30% 107%,
-    #fdf497 0%,
-    #fdf497 5%,
-    #fd5949 45%,
-    #d6249f 60%,
-    #285aeb 90%
-  );
+html[data-theme='dark'] {
+	--color-primary: theme('colors.pink.400');
+	--color-secondary: theme('colors.indigo.400');
+	--color-text: theme('colors.gray.50');
+	--color-text-offset: theme('colors.gray.400');
+	--color-background: theme('colors.gray.900');
+	--color-background-offset: theme('colors.gray.800');
+	--color-border: theme('colors.gray.700');
+	--instagram-gradient: radial-gradient(
+		circle at 30% 107%,
+		#fdf497 0%,
+		#fdf497 5%,
+		#fd5949 45%,
+		#d6249f 60%,
+		#285aeb 90%
+	);
 }

@@ -61,9 +61,8 @@ const features: Array<FeatureItem> = localedData.home.advantagesDetails
 	}
 
 	.card {
-		display: flex;
-		flex-direction: column;
-		position: relative;
+		@apply relative flex flex-col;
+		background-color: var(--color-border);
 	}
 
 	.card:hover::before {
@@ -72,7 +71,6 @@ const features: Array<FeatureItem> = localedData.home.advantagesDetails
 
 	.card::before,
 	.card::after {
-		border-radius: inherit;
 		content: '';
 		height: 100%;
 		left: 0px;
