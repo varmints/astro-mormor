@@ -6,5 +6,9 @@
 		{ "title": "Price list", "url": "/#price-list" },
 		{ "title": "Contact", "url": "/#contact" },
 		{ "title": "After hours", "url": "/#after-hours" }
-	]
+	],
+	"footer": {
+		"hiddenText": "Sometimes programmers leave ",
+		"hiddenTextFancy": "easter eggs..."
+	}
 }

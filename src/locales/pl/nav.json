@@ -6,5 +6,9 @@
 		{ "title": "Cennik", "url": "/#cennik" },
 		{ "title": "Kontakt", "url": "/#kontakt" },
 		{ "title": "Po godzinach", "url": "/#after-hours" }
-	]
+	],
+	"footer": {
+		"hiddenText": "Czasami programości zostawiają ",
+		"hiddenTextFancy": "niespodzianki..."
+	}
 }

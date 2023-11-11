@@ -1,0 +1,101 @@
+---
+import { getLocale } from 'astro-i18n-aut'
+import { t } from '../utils/i18n.ts'
+
+const locale = getLocale(Astro.url)
+const localedData = t(locale)
+---
+
+<div id="slides-footer">
+	<div id="left-side" class="side">
+		<h2 class="title">
+			{localedData.nav.footer.hiddenText}
+			<span class="fancy">{localedData.nav.footer.hiddenTextFancy}</span>
+		</h2>
+	</div>
+	<!-- <div id="right-side" class="side">
+		<h2 class="title">
+			Sometimes a everything everywhere all at once is
+			<span class="fancy">worse</span>
+		</h2>
+	</div> -->
+</div>
+
+<script>
+	const left = document.getElementById('left-side') as HTMLElement
+	const handleMove = (e: any) => {
+		left.style.width = `${(e.clientX / window.innerWidth) * 100}%`
+	}
+
+	const footer = document.getElementById('fancy-footer') as HTMLElement
+
+	footer.addEventListener('click', (e) => {
+		if (footer.getAttribute('data-slides-active') === 'false') {
+			document.onmousemove = (e) => handleMove(e)
+			footer.setAttribute('data-slides-active', 'true')
+		} else {
+			document.onmousemove = null
+			left.style.width = '0'
+			footer.setAttribute('data-slides-active', 'false')
+		}
+	})
+
+	footer.ontouchmove = (e) => handleMove(e.touches[0])
+</script>
+
+<style>
+	:root {
+		--dark: rgb(20, 20, 20);
+
+		--c1: var(--color-background);
+		--c2: var(--color-primary);
+
+		--left-color: var(--c1);
+		--right-color: var(--c2);
+	}
+
+	.side {
+		display: grid;
+		height: 100vh;
+		overflow: hidden;
+		place-items: center;
+		position: absolute;
+		width: 100%;
+		text-align: center;
+	}
+
+	.side .title {
+		font-weight: 800;
+		margin: 0 10vw;
+		width: 80vw;
+	}
+
+	.side .fancy {
+	}
+
+	#left-side {
+		background-color: var(--left-color);
+		width: 0;
+		z-index: 2;
+	}
+
+	#left-side .title {
+		@apply text-7xl;
+	}
+
+	#left-side .fancy {
+		color: var(--right-color);
+	}
+
+	/* #right-side {
+		background-color: var(--right-color);
+	}
+
+	#right-side .title {
+		color: var(--dark);
+	}
+
+	#right-side .fancy {
+		color: white;
+	} */
+</style>
