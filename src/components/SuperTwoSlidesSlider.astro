@@ -32,15 +32,15 @@ const localedData = t(locale)
 	footer.addEventListener('click', (e) => {
 		if (footer.getAttribute('data-slides-active') === 'false') {
 			document.onmousemove = (e) => handleMove(e)
+			footer.ontouchmove = (e) => handleMove(e.touches[0])
 			footer.setAttribute('data-slides-active', 'true')
 		} else {
 			document.onmousemove = null
+			footer.ontouchmove = null
 			left.style.width = '0'
 			footer.setAttribute('data-slides-active', 'false')
 		}
 	})
-
-	footer.ontouchmove = (e) => handleMove(e.touches[0])
 </script>
 
 <style>

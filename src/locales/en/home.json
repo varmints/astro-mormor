@@ -65,6 +65,15 @@
 	"priceListClose": "Click to hide price",
 	"contact": "Contact",
 	"contactLead": "If you just want to say <span class='text-primary'>hello and chat</span> about a few ideas, I'd love to connect.",
+	"contactFormTitle": "Write message",
+	"contactForm": {
+		"email": "E-mail adress",
+		"textArea": "Message content",
+		"send": "Send message",
+		"sending": "Sending...",
+		"success": "Thanks, I'll be in touch soon.",
+		"error": "Sorry, there was a problem. Please try again or contact us via social media."
+	},
 	"afterHours": "After hours",
 	"afterHoursLead": "In my free time <span class='text-primary'>I take photos</span> and I want to share my passion. That's why it would be nice if you would like to follow my profile on <span class='text-primary'>Instagram</span>.",
 	"afterHoursSeeMore": "See more at @foto.tfurca",

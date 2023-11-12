@@ -64,6 +64,15 @@
 	"priceListClose": "Kliknij, aby ukryć cenę",
 	"contact": "Kontakt",
 	"contactLead": "Jeśli chcesz się tylko <span class='text-primary'>przywitać i porozmawiać</span> o kilku pomysłach, z przyjemnością przyjmę to połączenie.",
+	"contactFormTitle": "Napisz wiadomość",
+	"contactForm": {
+		"email": "Adres email",
+		"textArea": "Treść wiadomości",
+		"send": "Wyślij wiadomość",
+		"sending": "Wysyłanie...",
+		"success": "Dzięki, wkrótce się skontaktuję.",
+		"error": "Przepraszam, wystąpił problem. Spróbuj ponownie lub skontaktuj się za pośrednictwem mediów społecznościwych."
+	},
 	"afterHours": "Po godzinach",
 	"afterHoursLead": "W wolnym czasie <span class='text-primary'>fotografuję</span> i chcę się dzielić moją pasją. Dlatego byłoby miło gdybyś zechciał śledzić mój profil na <span class='text-primary'>Instagramie</span>.",
 	"afterHoursSeeMore": "Zobacz więcej na @foto.tfurca",
