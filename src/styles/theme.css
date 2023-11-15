@@ -6,6 +6,7 @@ html[data-theme='light'] {
 	--color-background: theme('colors.gray.100');
 	--color-background-offset: theme('colors.gray.100');
 	--color-border: theme('colors.gray.300');
+	--color-cursor: theme('colors.gray.500');
 	--instagram-gradient: radial-gradient(
 		circle at 30% 107%,
 		#fdf497 0%,
@@ -24,6 +25,7 @@ html[data-theme='dark'] {
 	--color-background: theme('colors.gray.900');
 	--color-background-offset: theme('colors.gray.800');
 	--color-border: theme('colors.gray.700');
+	--color-cursor: theme('colors.white');
 	--instagram-gradient: radial-gradient(
 		circle at 30% 107%,
 		#fdf497 0%,
