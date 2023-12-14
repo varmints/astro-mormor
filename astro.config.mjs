@@ -21,6 +21,9 @@ export default defineConfig({
 	build: {
 		format: 'file'
 	},
+	image: {
+		domains: ['cdninstagram.com']
+	},
 	markdown: markdownConfig,
 	integrations: [
 		tailwind(),
