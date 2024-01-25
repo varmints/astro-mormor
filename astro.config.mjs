@@ -61,5 +61,7 @@ export default defineConfig({
 	},
 	experimental: {},
 	output: 'server',
-	adapter: netlify()
+	adapter: netlify({
+		cacheOnDemandPages: true
+	})
 })
