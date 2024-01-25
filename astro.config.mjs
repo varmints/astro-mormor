@@ -6,6 +6,7 @@ import react from '@astrojs/react'
 import sitemap from '@astrojs/sitemap'
 import { i18n, filterSitemapByDefaultLocale } from 'astro-i18n-aut/integration'
 import markdownConfig from './markdown.config.js'
+import netlify from '@astrojs/netlify'
 
 const defaultLocale = 'pl'
 const locales = {
@@ -20,9 +21,6 @@ export default defineConfig({
 	trailingSlash: 'never',
 	build: {
 		format: 'file'
-	},
-	image: {
-		domains: ['cdninstagram.com']
 	},
 	markdown: markdownConfig,
 	integrations: [
@@ -47,7 +45,9 @@ export default defineConfig({
 				locales,
 				defaultLocale
 			},
-			filter: filterSitemapByDefaultLocale({ defaultLocale })
+			filter: filterSitemapByDefaultLocale({
+				defaultLocale
+			})
 		})
 	],
 	vite: {
@@ -59,5 +59,7 @@ export default defineConfig({
 			exclude: ['@resvg/resvg-js']
 		}
 	},
-	experimental: {}
+	experimental: {},
+	output: 'server',
+	adapter: netlify()
 })
