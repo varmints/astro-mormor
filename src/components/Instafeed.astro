@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets'
 const { feed } = Astro.props
 ---
 
@@ -8,13 +7,11 @@ const { feed } = Astro.props
 		feed.map((item: any) => (
 			<li class="relative aspect-square">
 				<a class="behold-gw-post behold-gw-post--hover-icon" href={item.permalink} target="_blank">
-					<Image
+					<img
 						src={item.mediaUrl}
 						class="behold-gw-image h-full w-full object-cover"
 						width={600}
 						height={600}
-						quality={95}
-						format="webp"
 						alt={item.caption}
 					/>
 				</a>
