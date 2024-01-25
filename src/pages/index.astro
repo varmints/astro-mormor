@@ -23,6 +23,9 @@ const { ...head } = Astro.props
 
 const locale = getLocale(Astro.url)
 const localedData = t(locale)
+
+// Set Cache-Control headers for CDN caching
+Astro.response.headers.set('CDN-Cache-Control', 'public, max-age=45, must-revalidate')
 ---
 
 <script>

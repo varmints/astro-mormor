@@ -5,9 +5,6 @@ import { siteInfo } from '~/config'
 import { getLocale } from 'astro-i18n-aut'
 import { t } from '../utils/i18n.ts'
 
-// Set Cache-Control headers for CDN caching
-Astro.response.headers.set('CDN-Cache-Control', 'public, max-age=45, must-revalidate')
-
 const locale = getLocale(Astro.url)
 const localedData = t(locale)
 
