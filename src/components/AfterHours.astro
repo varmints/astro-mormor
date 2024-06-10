@@ -1,22 +1,20 @@
 ---
 import ContentSection from '~/components/ContentSection.astro'
-import Instafeed from './Instafeed.astro'
 import { siteInfo } from '~/config'
 import { getLocale } from 'astro-i18n-aut'
 import { t } from '../utils/i18n.ts'
 
 const locale = getLocale(Astro.url)
 const localedData = t(locale)
-
-const data = await fetch('https://feeds.behold.so/QNL1VtO4iz5fDxuirBhu').then((r) => r.json())
-const [instagramLink] = siteInfo.socialLinks.filter((item) => item.platform === 'instagram')
+const instagramLink = siteInfo.socialLinks.filter(
+	(platform) => platform.platform === 'instagram'
+)[0].href
 ---
 
 <ContentSection title={localedData.home.afterHours} id="after-hours">
 	<Fragment set:html={localedData.home.afterHoursLead} slot="lead" />
-	<Instafeed feed={data} />
 	<a
-		href={instagramLink.href}
+		href={instagramLink}
 		class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4 text-center hover:text-secondary focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-transparent"
 		target="_blank"
 	>
